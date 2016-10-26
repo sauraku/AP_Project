@@ -19,6 +19,9 @@ public class mainClass {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        /* myPanel panel = new myPanel();
+        myFrame frame= new myFrame(panel);
+        frame.setLocationRelativeTo(null);*/
     }
 }
 
