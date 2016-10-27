@@ -1,3 +1,5 @@
+package queryHandlers;
+
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -8,7 +10,7 @@ import org.xml.sax.helpers.DefaultHandler;
  */
 
 
-public class UserHandler extends DefaultHandler {
+public class query1Handler extends DefaultHandler {
 
     boolean bFirstName = false;
     boolean bLastName = false;
@@ -34,8 +36,7 @@ public class UserHandler extends DefaultHandler {
     }
 
     @Override
-    public void endElement(String uri,
-                           String localName, String qName) throws SAXException {
+    public void endElement(String uri, String localName, String qName) throws SAXException {
         if (qName.equalsIgnoreCase("article")) {
             System.out.println();
         }
