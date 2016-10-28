@@ -12,7 +12,7 @@ public class myPanel
 {
     private JPanel panel=new JPanel(new GridBagLayout()),panel2;
 
-    GridBagConstraints gbc= new GridBagConstraints();
+    private GridBagConstraints gbc= new GridBagConstraints();
 
 
     public myPanel()
