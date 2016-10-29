@@ -16,6 +16,7 @@ public class query1Handler extends DefaultHandler {
     boolean bLastName = false;
     boolean bNickName = false;
     boolean bMarks = false;
+    int c=0;
 
     @Override
     public void startElement(String uri,
@@ -23,7 +24,7 @@ public class query1Handler extends DefaultHandler {
             throws SAXException {
         if (qName.equalsIgnoreCase("article")) {
             String modDate = attributes.getValue("mdate");
-            System.out.println("modified on : " + modDate);
+            //System.out.println("modified on : " + modDate);
         } else if (qName.equalsIgnoreCase("author")) {
             bFirstName = true;
         } else if (qName.equalsIgnoreCase("title")) {
@@ -38,7 +39,12 @@ public class query1Handler extends DefaultHandler {
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
         if (qName.equalsIgnoreCase("article")) {
-            System.out.println();
+            //System.out.println();
+            ++c;
+            if(c%1000==0)
+            {
+                System.out.println(c);
+            }
         }
     }
 
@@ -46,20 +52,16 @@ public class query1Handler extends DefaultHandler {
     public void characters(char ch[],
                            int start, int length) throws SAXException {
         if (bFirstName) {
-            System.out.println("Author: "
-                    + new String(ch, start, length));
+           // System.out.println("Author: "+ new String(ch, start, length));
             bFirstName = false;
         } else if (bLastName) {
-            System.out.println("Title: "
-                    + new String(ch, start, length));
+           // System.out.println("Title: " + new String(ch, start, length));
             bLastName = false;
         } else if (bNickName) {
-            System.out.println("Year: "
-                    + new String(ch, start, length));
+           // System.out.println("Year: " + new String(ch, start, length));
             bNickName = false;
         } else if (bMarks) {
-            System.out.println("Url: "
-                    + new String(ch, start, length));
+          //  System.out.println("Url: " + new String(ch, start, length));
             bMarks = false;
         }
     }

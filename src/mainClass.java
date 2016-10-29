@@ -8,9 +8,9 @@ import java.io.File;
 
 public class mainClass {
     public static void main(String[] args){
-
+        System.setProperty("jdk.xml.entityExpansionLimit", "0");
         try {
-            File inputFile = new File("dblps.xml");
+            File inputFile = new File("dblp.xml");
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser saxParser = factory.newSAXParser();
             query1Handler userhandler = new query1Handler();
