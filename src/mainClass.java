@@ -1,6 +1,7 @@
 import GUI_Elements.myFrame;
 import GUI_Elements.myPanel;
-import queryHandlers.query1Handler;
+
+import queryHandlers.query1aHandler;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -13,7 +14,7 @@ public class mainClass {
             File inputFile = new File("dblp.xml");
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser saxParser = factory.newSAXParser();
-            query1Handler userhandler = new query1Handler();
+            query1aHandler userhandler = new query1aHandler();
             saxParser.parse(inputFile, userhandler);
         } catch (Exception e) {
             e.printStackTrace();
