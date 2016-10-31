@@ -1,8 +1,3 @@
-import GUI_Elements.myFrame;
-import GUI_Elements.myPanel;
-
-import queryHandlers.query1aHandler;
-
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
@@ -11,7 +6,7 @@ public class mainClass {
     public static void main(String[] args){
         System.setProperty("jdk.xml.entityExpansionLimit", "0");
         try {
-            File inputFile = new File("dblp.xml");
+            File inputFile = new File("dblps.xml");
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser saxParser = factory.newSAXParser();
             query1aHandler userhandler = new query1aHandler();

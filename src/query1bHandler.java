@@ -1,17 +1,12 @@
-package queryHandlers;
-
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 /**
- * Created by skwow on 10/18/2016.
- *
+ * Created by skwow on 10/29/2016.
  */
-
-
-public class query1aHandler extends DefaultHandler {
-
+public class query1bHandler extends DefaultHandler
+{
     boolean bFirstName = false;
     boolean bLastName = false;
     boolean bNickName = false;
@@ -52,16 +47,16 @@ public class query1aHandler extends DefaultHandler {
     public void characters(char ch[],
                            int start, int length) throws SAXException {
         if (bFirstName) {
-           // System.out.println("Author: "+ new String(ch, start, length));
+            // System.out.println("Author: "+ new String(ch, start, length));
             bFirstName = false;
         } else if (bLastName) {
-           // System.out.println("Title: " + new String(ch, start, length));
+            // System.out.println("Title: " + new String(ch, start, length));
             bLastName = false;
         } else if (bNickName) {
-           // System.out.println("Year: " + new String(ch, start, length));
+            // System.out.println("Year: " + new String(ch, start, length));
             bNickName = false;
         } else if (bMarks) {
-          //  System.out.println("Url: " + new String(ch, start, length));
+            //  System.out.println("Url: " + new String(ch, start, length));
             bMarks = false;
         }
     }
