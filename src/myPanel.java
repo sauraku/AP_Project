@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
@@ -9,7 +11,7 @@ import java.awt.event.ItemListener;
 public class myPanel
 {
     private JPanel panel=new JPanel(new GridBagLayout()),panel2;
-
+    private  myQuery1Panel q1p;
     private GridBagConstraints gbc= new GridBagConstraints();
 
 
@@ -17,7 +19,8 @@ public class myPanel
     {
         panel.setOpaque(false);
         gbc.insets= new Insets(20,20,20,20);
-        panel2= new myQuery1Panel().getPanel();
+        q1p=new myQuery1Panel();
+        panel2= q1p.panel2;
         final DefaultComboBoxModel typeOfQuery = new DefaultComboBoxModel();
         typeOfQuery.addElement("Query");
         typeOfQuery.addElement("Query1");
@@ -36,7 +39,7 @@ public class myPanel
             @Override
             public void itemStateChanged(ItemEvent e) {
                 Object temp = queryCombo.getSelectedIndex();
-                if(!temp.equals(0))
+                if(temp.equals(1))
                 {
                     panel2.setVisible(true);
                 }
@@ -46,6 +49,8 @@ public class myPanel
                 }
             }
         });
+        workingOfButtons();
+
         gbc.gridx=0;
         gbc.gridy=1;
         gbc.weighty=4;
@@ -53,7 +58,19 @@ public class myPanel
         panel2.setVisible(false);
     }
 
+    public void workingOfButtons()
+    {
+        q1p.searchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String searchBy = String.valueOf(q1p.searchByCombo.getSelectedItem());
+                String name_title=q1p.nameTitleTextField.getText();
+                String yearSelect = String.valueOf(q1p.yearCombo.getSelectedItem());
+                System.out.println(searchBy+" "+name_title+" "+yearSelect);
 
+            }
+        });
+    }
 
     public JPanel getPanel()
     {

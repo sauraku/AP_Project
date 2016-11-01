@@ -8,11 +8,13 @@ import java.awt.event.ItemListener;
  */
 public class myQuery1Panel
 {
-    private JPanel panel2=new JPanel(new GridBagLayout());
+    protected JPanel panel2=new JPanel(new GridBagLayout());
     private GridBagConstraints panel2gbc= new GridBagConstraints();
     private JLabel sinceYear,from,to;
-    private JButton resetButton,searchButton;
-    private JTextField sinceYearTeaxtField,fromTextField,toTextField;
+    protected JButton resetButton,searchButton;
+    protected JTextField sinceYearTeaxtField,fromTextField,toTextField,nameTitleTextField;
+    protected JComboBox yearCombo,searchByCombo;
+    protected Checkbox chkSortByYear,chkSortByRelevance;
 
     public myQuery1Panel()
     {
@@ -57,23 +59,23 @@ public class myQuery1Panel
         panel2gbc.gridy=4;
         panel2.add(new JLabel(""),panel2gbc);
         CheckboxGroup sort = new CheckboxGroup();
-        Checkbox chkSortByYear = new Checkbox("Sort By Year",sort,false);
+        chkSortByYear = new Checkbox("Sort By Year",sort,false);
         chkSortByYear.setForeground(Color.cyan);
         chkSortByYear.setBackground(Color.gray);
         chkSortByYear.setFont(new Font("Serif", Font.BOLD, 30));
         chkSortByYear.setPreferredSize(new Dimension(300,50));
-        Checkbox chkSortByRelevence = new Checkbox("Sort By Relevence",sort,false);
-        chkSortByRelevence.setForeground(Color.cyan);
-        chkSortByRelevence.setBackground(Color.gray);
-        chkSortByRelevence.setFont(new Font("Serif", Font.BOLD, 30));
-        chkSortByRelevence.setPreferredSize(new Dimension(300,50));
+        chkSortByRelevance = new Checkbox("Sort By Relevence",sort,false);
+        chkSortByRelevance.setForeground(Color.cyan);
+        chkSortByRelevance.setBackground(Color.gray);
+        chkSortByRelevance.setFont(new Font("Serif", Font.BOLD, 30));
+        chkSortByRelevance.setPreferredSize(new Dimension(300,50));
         panel2gbc.gridwidth=2;
         panel2gbc.gridx=0;
         panel2gbc.gridy=5;
         panel2.add(chkSortByYear,panel2gbc);
         panel2gbc.gridx=0;
         panel2gbc.gridy=6;
-        panel2.add(chkSortByRelevence,panel2gbc);
+        panel2.add(chkSortByRelevance,panel2gbc);
         panel2gbc.gridwidth=1;
     }
 
@@ -83,7 +85,7 @@ public class myQuery1Panel
         yearSelect.addElement("Year Select");
         yearSelect.addElement("Since Year");
         yearSelect.addElement("Custom Range");
-        final JComboBox yearCombo = new JComboBox(yearSelect);
+        yearCombo = new JComboBox(yearSelect);
         yearCombo.setSelectedIndex(0);
         yearCombo.setPreferredSize(new Dimension(100,50));
         yearCombo.setFont(new Font("Serif", Font.BOLD, 30));
@@ -183,7 +185,7 @@ public class myQuery1Panel
         searchBy.addElement("Search By");
         searchBy.addElement("Name");
         searchBy.addElement("Title");
-        final JComboBox searchByCombo = new JComboBox(searchBy);
+        searchByCombo = new JComboBox(searchBy);
         searchByCombo.setSelectedIndex(0);
         searchByCombo.setPreferredSize(new Dimension(100,50));
         searchByCombo.setFont(new Font("Serif", Font.BOLD, 30));
@@ -193,7 +195,7 @@ public class myQuery1Panel
         panel2gbc.fill= GridBagConstraints.HORIZONTAL;
         panel2.add(searchByCombo,panel2gbc);
         JLabel nameTitleLabel= new JLabel("Name/TiTle");
-        JTextField nameTitleTextField=new JTextField("");
+        nameTitleTextField=new JTextField("");
         nameTitleTextField.setPreferredSize(new Dimension(200,50));
         nameTitleLabel.setPreferredSize(new Dimension(200,50));
         nameTitleLabel.setFont(new Font("Serif", Font.BOLD, 30));
@@ -207,9 +209,6 @@ public class myQuery1Panel
         panel2.add(nameTitleTextField,panel2gbc);
     }
 
-    public JPanel getPanel()
-    {
-        return panel2;
-    }
+
 
 }
