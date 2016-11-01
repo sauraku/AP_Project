@@ -15,6 +15,7 @@ public class myQuery1Panel
     protected JTextField sinceYearTeaxtField,fromTextField,toTextField,nameTitleTextField;
     protected JComboBox yearCombo,searchByCombo;
     protected Checkbox chkSortByYear,chkSortByRelevance;
+    protected CheckboxGroup sort;
 
     public myQuery1Panel()
     {
@@ -57,8 +58,9 @@ public class myQuery1Panel
     private void prepareCheckBoxUI()
     {
         panel2gbc.gridy=4;
-        panel2.add(new JLabel(""),panel2gbc);
-        CheckboxGroup sort = new CheckboxGroup();
+        panel2gbc.gridx=0;
+        panel2.add(new JLabel("         "),panel2gbc);
+        sort = new CheckboxGroup();
         chkSortByYear = new Checkbox("Sort By Year",sort,false);
         chkSortByYear.setForeground(Color.cyan);
         chkSortByYear.setBackground(Color.gray);

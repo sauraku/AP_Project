@@ -1,9 +1,12 @@
 import javax.swing.*;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.io.File;
 
 /**
  * Created by skwow on 10/21/2016.
@@ -66,7 +69,29 @@ public class myPanel
                 String searchBy = String.valueOf(q1p.searchByCombo.getSelectedItem());
                 String name_title=q1p.nameTitleTextField.getText();
                 String yearSelect = String.valueOf(q1p.yearCombo.getSelectedItem());
-                System.out.println(searchBy+" "+name_title+" "+yearSelect);
+                //System.out.println(searchBy+" "+name_title+" "+yearSelect);
+                int from,to;
+                if(yearSelect.charAt(0)=='S')
+                {
+                    from= Integer.parseInt(q1p.sinceYearTeaxtField.getText());
+                    to=9999;  }  else  {
+                    from= Integer.parseInt(q1p.fromTextField.getText());
+                    to=Integer.parseInt(q1p.toTextField.getText());
+                }
+                if(searchBy.charAt(0)=='N')
+                {
+                    try {
+                        File inputFile = new File("dblps.xml");
+                        SAXParserFactory factory = SAXParserFactory.newInstance();
+                        SAXParser saxParser = factory.newSAXParser();
+                        query1aHandler userhandler=null;
+                        if(q1p.sort.getSelectedCheckbox().toString().charAt(26)=='0')
+                            userhandler = new query1aHandler(1,name_title,from,to);
+                        saxParser.parse(inputFile, userhandler);
+                    } catch (Exception f) {
+                        f.printStackTrace();
+                    }
+                }
 
             }
         });

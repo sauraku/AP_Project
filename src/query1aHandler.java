@@ -10,33 +10,40 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class query1aHandler extends DefaultHandler {
 
-    boolean bFirstName = false;
-    boolean bLastName = false;
-    boolean bNickName = false;
-    boolean bMarks = false;
+    private boolean authorbool = false,overall=false, titlebool = false, yearbool = false, urlbool = false,volume=false,pages=false,journal=false;
+    private int sortby,from,to;
+    private String name_title;
     int c=0;
+    private publishables x;
+
+    public query1aHandler(int _sortby,String _name_title,int _from,int _to)
+    {
+        sortby=_sortby;
+        name_title=_name_title;
+        from=_from;
+        to=_to;
+    }
+
 
     @Override
     public void startElement(String uri,
                              String localName, String qName, Attributes attributes)
             throws SAXException {
-        if (qName.equalsIgnoreCase("article")) {
-            String modDate = attributes.getValue("mdate");
-            //System.out.println("modified on : " + modDate);
-        } else if (qName.equalsIgnoreCase("author")) {
-            bFirstName = true;
+         if (qName.equalsIgnoreCase("author")) {
+            authorbool = true;
         } else if (qName.equalsIgnoreCase("title")) {
-            bLastName = true;
+            titlebool = true;
         } else if (qName.equalsIgnoreCase("year")) {
-            bNickName = true;
+            yearbool = true;
         } else if (qName.equalsIgnoreCase("url")) {
-            bMarks = true;
+            urlbool = true;
         }
     }
 
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
         if (qName.equalsIgnoreCase("article")) {
+            overall=false;
             //System.out.println();
             ++c;
             if(c%1000==0)
@@ -47,20 +54,24 @@ public class query1aHandler extends DefaultHandler {
     }
 
     @Override
-    public void characters(char ch[],
-                           int start, int length) throws SAXException {
-        if (bFirstName) {
-           // System.out.println("Author: "+ new String(ch, start, length));
-            bFirstName = false;
-        } else if (bLastName) {
-           // System.out.println("Title: " + new String(ch, start, length));
-            bLastName = false;
-        } else if (bNickName) {
-           // System.out.println("Year: " + new String(ch, start, length));
-            bNickName = false;
-        } else if (bMarks) {
-          //  System.out.println("Url: " + new String(ch, start, length));
-            bMarks = false;
+    public void characters(char ch[], int start, int length) throws SAXException {
+        if (authorbool) {
+            String temp=new String(ch, start, length);
+            if(name_title.equals(temp))
+            {
+                overall = true;
+                System.out.println("Author: " + new String(ch, start, length));
+            }
+            authorbool = false;
+        } else if (titlebool&& overall) {
+            System.out.println("Title: " + new String(ch, start, length));
+            titlebool = false;
+        } else if (yearbool&& overall) {
+            System.out.println("Year: " + new String(ch, start, length));
+            yearbool = false;
+        } else if (urlbool&& overall) {
+            System.out.println("Url: " + new String(ch, start, length));
+            urlbool = false;
         }
     }
 }
