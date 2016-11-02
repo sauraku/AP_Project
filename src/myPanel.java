@@ -81,7 +81,7 @@ public class myPanel
                 if(searchBy.charAt(0)=='N')
                 {
                     try {
-                        File inputFile = new File("dblps.xml");
+                        File inputFile = new File("dblp.xml");
                         SAXParserFactory factory = SAXParserFactory.newInstance();
                         SAXParser saxParser = factory.newSAXParser();
                         query1aHandler userhandler=null;
