@@ -10,11 +10,11 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class query1aHandler extends DefaultHandler {
 
-    private boolean authorbool = false,overall=false, titlebool = false, yearbool = false, urlbool = false,volume=false,pages=false,journal=false;
+    private boolean authorbool = false,overall=false,articlebool, titlebool = false, yearbool = false, urlbool = false,volume=false,pages=false,journal=false;
     private int sortby,from,to;
     private String name_title;
     int c=0;
-    private publishables x;
+    private publishables xz;
 
     public query1aHandler(int _sortby,String _name_title,int _from,int _to)
     {
@@ -31,8 +31,10 @@ public class query1aHandler extends DefaultHandler {
             throws SAXException {
          if (qName.equalsIgnoreCase("author")) {
             authorbool = true;
-        } else if (qName.equalsIgnoreCase("title")) {
+        } else if (qName.equalsIgnoreCase("title")||qName.equalsIgnoreCase("book")||qName.equalsIgnoreCase("www")||qName.equalsIgnoreCase("phdthesis")||qName.equalsIgnoreCase("inproceedings")||qName.equalsIgnoreCase("incollection")||qName.equalsIgnoreCase("proceedings")||qName.equalsIgnoreCase("mastersThesis")) {
             titlebool = true;
+        }else if (qName.equalsIgnoreCase("article")) {
+            articlebool = true;
         } else if (qName.equalsIgnoreCase("year")) {
             yearbool = true;
         } else if (qName.equalsIgnoreCase("url")) {
@@ -44,6 +46,7 @@ public class query1aHandler extends DefaultHandler {
     public void endElement(String uri, String localName, String qName) throws SAXException {
         if (qName.equalsIgnoreCase("article")) {
             overall=false;
+            articlebool=false;
             //System.out.println();
             ++c;
             if(c%1000==0)
@@ -52,15 +55,23 @@ public class query1aHandler extends DefaultHandler {
             }
         }
     }
+    int x=0;
 
     @Override
     public void characters(char ch[], int start, int length) throws SAXException {
-        if (authorbool) {
+
+         if (authorbool && articlebool) {
             String temp=new String(ch, start, length);
             if(name_title.equals(temp))
             {
                 overall = true;
+                ++x;
                 System.out.println("Author: " + new String(ch, start, length));
+                if(x==26)
+                {
+                    System.out.println(c);
+                    System.exit(0);
+                }
             }
             authorbool = false;
         } else if (titlebool&& overall) {
