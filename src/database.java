@@ -17,6 +17,8 @@ public class database
         Collections.sort(list);
     }
 
+
+
     public int getArrayLength()
     {
         return list.size();
@@ -32,6 +34,12 @@ public class database
         list= new ArrayList<>();
     }
 
-
+    void print()
+    {
+        for(int i=0;i<list.size();i++)
+        {
+            System.out.println(list.get(i));
+        }
+    }
 
 }
