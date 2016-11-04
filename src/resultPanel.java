@@ -6,39 +6,32 @@ import javax.swing.*;
 public class resultPanel
 {
     private JScrollPane pane;
-    private JPanel panel;
     private JTable table;
-    private Object[][] rowData={
+    private static Object[][] rowData={
             {"a","b","c","c","c","c","c"}
     };
 
     public resultPanel()
     {
-        panel=new JPanel();
         buildGui();
     }
 
-    public void updateData(int index,Object[] _data)
+    public JScrollPane getPane()
+    {
+        return pane;
+    }
+
+    public static void updateData(int index,Object[] _data)
     {
         rowData[index]=_data;
     }
 
     private void buildGui()
     {
-        Object columnNames[] = { "title","author" ,"year", "volume","pages","journal/booktitle","url" };
+        String columnNames[] = { "title","author" ,"year", "volume","pages","journal/booktitle","url" };
         table=new JTable(rowData,columnNames);
-        panel.add(table);
-        pane=new JScrollPane(panel);
+        pane=new JScrollPane(table);
     }
 
 
-    public static void main(String[] args)
-    {
-        resultPanel test = new resultPanel();
-        JFrame x = new JFrame();
-        x.add(test.pane);
-        x.setVisible(true);
-        x.setSize(400,300);
-
-    }
 }

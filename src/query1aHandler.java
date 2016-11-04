@@ -2,6 +2,12 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import javax.swing.*;
+import java.lang.reflect.InvocationTargetException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 /**
  * Created by skwow on 10/18/2016.
  *
@@ -10,7 +16,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class query1aHandler extends DefaultHandler {
 
-    private boolean authorbool = false,overall=false,articlebool, titlebool = false, yearbool = false, urlbool = false,volume=false,pages=false,journal=false;
+    private boolean authorbool = false,overall=false,articlebool, titlebool = false, yearbool = false, urlbool = false,volumebool=false,pagebool=false,journalbool=false;
     private int sortby,from,to;
     private String name_title;
     int c=0;
@@ -24,6 +30,12 @@ public class query1aHandler extends DefaultHandler {
         to=_to;
     }
 
+    Runnable updateBar= new Runnable() {
+        @Override
+        public void run() {
+            myFrame.getBar().setValue(c);
+        }
+    };
 
     @Override
     public void startElement(String uri,
@@ -33,6 +45,12 @@ public class query1aHandler extends DefaultHandler {
             authorbool = true;
         } else if (qName.equalsIgnoreCase("title")||qName.equalsIgnoreCase("book")||qName.equalsIgnoreCase("www")||qName.equalsIgnoreCase("phdthesis")||qName.equalsIgnoreCase("inproceedings")||qName.equalsIgnoreCase("incollection")||qName.equalsIgnoreCase("proceedings")||qName.equalsIgnoreCase("mastersThesis")) {
             titlebool = true;
+        }else if (qName.equalsIgnoreCase("pages")) {
+            pagebool = true;
+        }else if (qName.equalsIgnoreCase("volume")) {
+            volumebool = true;
+        }else if (qName.equalsIgnoreCase("journal")) {
+            journalbool = true;
         }else if (qName.equalsIgnoreCase("article")) {
             articlebool = true;
         } else if (qName.equalsIgnoreCase("year")) {
@@ -49,9 +67,14 @@ public class query1aHandler extends DefaultHandler {
             articlebool=false;
             //System.out.println();
             ++c;
-            if(c%1000==0)
+            if(c%1000000==0)
             {
-                System.out.println(c);
+                SwingUtilities.invokeLater(new Runnable() {
+                    public void run() {
+                        // Remember to make pbar final variable.
+                        myFrame.getBar().setValue(c);
+                    }
+                });
             }
         }
     }
@@ -83,6 +106,15 @@ public class query1aHandler extends DefaultHandler {
         } else if (urlbool&& overall) {
             System.out.println("Url: " + new String(ch, start, length));
             urlbool = false;
+        } else if (urlbool&& overall) {
+            System.out.println("page: " + new String(ch, start, length));
+            pagebool = false;
+        } else if (urlbool&& overall) {
+            System.out.println("volume: " + new String(ch, start, length));
+            volumebool = false;
+        } else if (urlbool&& overall) {
+            System.out.println("Journal: " + new String(ch, start, length));
+            journalbool = false;
         }
     }
 }
