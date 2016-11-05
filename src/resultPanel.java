@@ -11,10 +11,6 @@ public class resultPanel
     private static JTable table;
 
 
-
-
-
-
     public static Object[][] rowData={
             {"a","b","c","c","c","c","c"}
     };

@@ -95,18 +95,6 @@ public class query1aHandler extends DefaultHandler {
             if(c%100000==0)
             {
                 System.out.println((c/15233.84)+" %");
-                /*try {
-                    SwingUtilities.invokeAndWait(new Runnable() {
-                        public void run() {
-                            // Remember to make pbar final variable.
-                            bar.setValue(c);
-                        }
-                    });
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (InvocationTargetException e) {
-                    e.printStackTrace();
-                }*/
             }
         }if (qName.equalsIgnoreCase("dblp")) {
             d.sort();

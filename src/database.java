@@ -41,7 +41,7 @@ public class database
         showResult();
     }
 
-    // "title","author" ,"year", "volume","pages","journal/booktitle","url" };
+
 
     void showResult()
     {
