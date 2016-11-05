@@ -85,12 +85,16 @@ public class query1aHandler extends DefaultHandler {
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
         if (qName.equalsIgnoreCase("article")) {
-            overall=false;
-            articlebool=false;
-            d.add(pub);
-            ++c;
-            if(c%1000000==0)
+            if(overall)
             {
+                d.add(pub);
+                overall=false;
+            }
+            articlebool=false;
+            ++c;
+            if(c%100000==0)
+            {
+                System.out.println((c/15233.84)+" %");
                 /*try {
                     SwingUtilities.invokeAndWait(new Runnable() {
                         public void run() {
@@ -105,6 +109,7 @@ public class query1aHandler extends DefaultHandler {
                 }*/
             }
         }if (qName.equalsIgnoreCase("dblp")) {
+            d.sort();
             d.print();
         }
     }
@@ -123,6 +128,7 @@ public class query1aHandler extends DefaultHandler {
                 overall = true;
                 pub=new publishables();
                 pub.setTitle(new String(ch, start, length));
+                pub.addAuthor(new String(ch, start, length));
             }
             authorbool = false;
         } else if (titlebool&& overall) {
@@ -136,7 +142,7 @@ public class query1aHandler extends DefaultHandler {
         } else if (yearbool&& overall) {
              yearbool = false;
              try{
-
+                 pub.setYear(Integer.parseInt(new String(ch, start, length)));
                 // System.out.println("Year: " + Integer.parseInt(new String(ch, start, length)));
              }catch (Exception e){};
 

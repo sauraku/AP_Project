@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  * Created by skwow on 10/27/2016.
@@ -6,8 +8,14 @@ import javax.swing.*;
 public class resultPanel
 {
     private JScrollPane pane;
-    private JTable table;
-    private static Object[][] rowData={
+    private static JTable table;
+
+
+
+
+
+
+    public static Object[][] rowData={
             {"a","b","c","c","c","c","c"}
     };
 
@@ -21,9 +29,15 @@ public class resultPanel
         return pane;
     }
 
-    public static void updateData(int index,Object[] _data)
+    public static void updateData(Object[][] _data)
     {
-        rowData[index]=_data;
+        rowData=_data;
+    }
+
+    private static void updateTable()
+    {
+        String columnNames[] = { "title","author" ,"year", "volume","pages","journal/booktitle","url" };
+        table=new JTable(rowData,columnNames);
     }
 
     private void buildGui()

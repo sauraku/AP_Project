@@ -54,6 +54,37 @@ public class publishables implements Comparable
         url.add(_url);
     }
 
+    public String getAuthor()
+    {
+        String temp=authors.get(0);
+        for(int i=1;i<authors.size();i++)
+        {
+            temp+=" ,"+authors.get(i);
+        }
+        return temp;
+
+    }
+
+    public String getUrl()
+    {
+        try
+        {
+            if(url.get(0)==null)
+            {
+                return "NA";
+            }
+            String temp=url.get(0);
+            for(int i=1;i<url.size();i++)
+            {
+                temp+=", "+url.get(i);
+            }
+            return temp;
+        }
+        catch (Exception e)
+        {
+            return "NA";
+        }
+    }
 
     public String getTitle() {
         return title;
