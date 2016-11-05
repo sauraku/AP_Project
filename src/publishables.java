@@ -19,6 +19,7 @@ public class publishables implements Comparable
         title="NA";
         volume="NA";
         pages="NA";
+        year=0;
         journal_booktitle="NA";
         authors= new ArrayList<>();
         url= new ArrayList<>();

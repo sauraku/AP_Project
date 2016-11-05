@@ -51,14 +51,14 @@ public class myFrame extends JFrame
         framegbc.gridy=1;
         frame.add(pane,framegbc);
 
-        bar = new JProgressBar(0, 1523000);
+       /* bar = new JProgressBar(0, 1523000);
         bar.setValue(0);
         bar.setStringPainted(true);
         framegbc.gridwidth=5;
         framegbc.gridheight=1;
         framegbc.gridx=0;
         framegbc.gridy=2;
-        frame.add(bar,framegbc);
+        frame.add(bar,framegbc);*/
 
 
         frame.getContentPane().setBackground(Color.GRAY);
