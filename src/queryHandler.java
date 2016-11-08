@@ -10,19 +10,14 @@ import java.io.File;
 /**
  * Created by skwow on 11/8/2016.
  */
-public class trying extends DefaultHandler
+public class queryHandler extends DefaultHandler
 {
     private boolean authorbool = false,ignorebool=false,overall=false,articlebool, titlebool = false, yearbool = false, urlbool = false,volumebool=false,pagebool=false,journalbool=false;
-    private int sortby,from,to;
-    private String name_title;
     int c=0;
     private publishables pub;
-    private database d=new database();
 
     private JProgressBar bar;
     private JFrame loading;
-
-
     class loadingScreen
     {
         public loadingScreen()
@@ -35,6 +30,18 @@ public class trying extends DefaultHandler
             loading.add(bar);
         }
     }
+
+    public queryHandler()
+    {
+        System.setProperty("jdk.xml.entityExpansionLimit", "0");
+        try {
+            File inputFile = new File("dblp.xml");
+            SAXParserFactory factory = SAXParserFactory.newInstance();
+            SAXParser saxParser = factory.newSAXParser();
+            saxParser.parse(inputFile, this);
+        } catch (Exception f) {
+            f.printStackTrace();
+        }    }
 
 
     @Override
@@ -80,9 +87,11 @@ public class trying extends DefaultHandler
             ++c;
             if(c%100000==0)
             {
-                System.out.println((c/15233.84)+" %");
+                System.out.println((c/15233.94)+" %");
             }
         }if (qName.equalsIgnoreCase("dblp")) {
+
+            System.out.println("100 %");
         }
     }
 
@@ -132,17 +141,4 @@ public class trying extends DefaultHandler
 
 
 
-    public static void main(String[] args)
-    {
-        System.setProperty("jdk.xml.entityExpansionLimit", "0");
-        try {
-            File inputFile = new File("dblp.xml");
-            SAXParserFactory factory = SAXParserFactory.newInstance();
-            SAXParser saxParser = factory.newSAXParser();
-            trying userhandler = new trying();
-            saxParser.parse(inputFile, userhandler);
-        } catch (Exception f) {
-            f.printStackTrace();
-        }
-    }
 }

@@ -80,16 +80,10 @@ public class myPanel
                 }
                 if(searchBy.charAt(0)=='N')
                 {
-                    try {
-                        File inputFile = new File("dblp.xml");
-                        SAXParserFactory factory = SAXParserFactory.newInstance();
-                        SAXParser saxParser = factory.newSAXParser();
-                        query1aHandler userhandler=null;
-                        if(q1p.sort.getSelectedCheckbox().toString().charAt(26)=='0')
-                            userhandler = new query1aHandler(1,name_title,from,to);
-                        saxParser.parse(inputFile, userhandler);
-                    } catch (Exception f) {
-                        f.printStackTrace();
+                    if(q1p.sort.getSelectedCheckbox().toString().charAt(26)=='0')
+                    {
+                        query1Handler q1= new query1Handler(name_title,1,from,to);
+                        q1.doWork();
                     }
                 }
 

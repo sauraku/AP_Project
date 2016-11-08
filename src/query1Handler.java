@@ -14,9 +14,68 @@ import java.util.concurrent.Executors;
  */
 
 
-public class query1aHandler extends DefaultHandler {
+public class query1Handler extends DefaultHandler {
 
-    private boolean authorbool = false,ignorebool=false,overall=false,articlebool, titlebool = false, yearbool = false, urlbool = false,volumebool=false,pagebool=false,journalbool=false;
+    private int sortby,from,to;
+    private String name_title;
+    private database d= new database();
+
+    public query1Handler(String _name_title, int _sortby, int _from, int _to)
+    {
+        sortby=_sortby;
+        from=_from;
+        to=_to;
+        name_title=_name_title;
+    }
+    // sort==1 for year and ===2 for relevance
+    public void doWork()
+    {
+        for(int i=0;i<database.allData.size();i++)
+        {
+            if(database.allData.get(i).getAuthor().equals(name_title))
+            {
+                d.add(database.allData.get(i));
+            }
+        }
+        d.print();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*private boolean authorbool = false,ignorebool=false,overall=false,articlebool, titlebool = false, yearbool = false, urlbool = false,volumebool=false,pagebool=false,journalbool=false;
     private int sortby,from,to;
     private String name_title;
     int c=0;
@@ -41,7 +100,7 @@ public class query1aHandler extends DefaultHandler {
         }
     }
 
-    public query1aHandler(int _sortby,String _name_title,int _from,int _to)
+    public query1Handler(int _sortby,String _name_title,int _from,int _to)
     {
         sortby=_sortby;
         name_title=_name_title;
@@ -148,5 +207,5 @@ public class query1aHandler extends DefaultHandler {
              pub.addUrl(new String(ch, start, length));
              //System.out.println("Url: " + new String(ch, start, length));
         }
-    }
+    }*/
 }
