@@ -8,6 +8,7 @@ public class database
 {
 
     private ArrayList<publishables> list= new ArrayList<>();
+    public static  ArrayList<publishables> allData= new ArrayList<>();
 
     public void sort()
     {
