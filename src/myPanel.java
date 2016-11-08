@@ -13,7 +13,7 @@ import java.io.File;
  */
 public class myPanel
 {
-    private JPanel panel=new JPanel(new GridBagLayout()),panel2;
+    private JPanel panel=new JPanel(new GridBagLayout()),panel2,panel3;
     private  myQuery1Panel q1p;
     private GridBagConstraints gbc= new GridBagConstraints();
 
@@ -24,6 +24,8 @@ public class myPanel
         gbc.insets= new Insets(20,20,20,20);
         q1p=new myQuery1Panel();
         panel2= q1p.panel2;
+        myQuery2Panel p3=new myQuery2Panel();
+        panel3=p3.getPanel();
         final DefaultComboBoxModel typeOfQuery = new DefaultComboBoxModel();
         typeOfQuery.addElement("Query");
         typeOfQuery.addElement("Query1");
@@ -45,10 +47,13 @@ public class myPanel
                 if(temp.equals(1))
                 {
                     panel2.setVisible(true);
+                    panel3.setVisible(false);
                 }
-                else
+                else if(temp.equals(2))
                 {
                     panel2.setVisible(false);
+                    panel3.setVisible(true);
+
                 }
             }
         });
@@ -58,7 +63,9 @@ public class myPanel
         gbc.gridy=1;
         gbc.weighty=4;
         panel.add(panel2,gbc);
+        panel.add(panel3,gbc);
         panel2.setVisible(false);
+        panel3.setVisible(false);
     }
 
     public void workingOfButtons()

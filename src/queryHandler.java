@@ -90,8 +90,7 @@ public class queryHandler extends DefaultHandler
                 System.out.println((c/15233.94)+" %");
             }
         }if (qName.equalsIgnoreCase("dblp")) {
-
-            System.out.println("100 %");
+            System.out.println("100 % "+database.allData.size());
         }
     }
 

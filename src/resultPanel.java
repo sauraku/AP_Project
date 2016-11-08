@@ -30,10 +30,11 @@ public class resultPanel
         rowData=_data;
     }
 
-    private static void updateTable()
+    public static void updateTable()
     {
         String columnNames[] = { "title","author" ,"year", "volume","pages","journal/booktitle","url" };
-        table=new JTable(rowData,columnNames);
+        DefaultTableModel tm = new DefaultTableModel(rowData, columnNames);
+        table.setModel(tm);
     }
 
     private void buildGui()

@@ -4,6 +4,8 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import javax.swing.*;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -14,11 +16,11 @@ import java.util.concurrent.Executors;
  */
 
 
-public class query1Handler extends DefaultHandler {
+public class query1Handler  {
 
     private int sortby,from,to;
     private String name_title;
-    private database d= new database();
+    private ArrayList<publishables> list= new ArrayList<>();
 
     public query1Handler(String _name_title, int _sortby, int _from, int _to)
     {
@@ -32,12 +34,57 @@ public class query1Handler extends DefaultHandler {
     {
         for(int i=0;i<database.allData.size();i++)
         {
-            if(database.allData.get(i).getAuthor().equals(name_title))
+            if(database.allData.get(i).getAuthor().equals(name_title)&& database.allData.get(i).getYear()>=from && database.allData.get(i).getYear()<=to)
             {
-                d.add(database.allData.get(i));
+                list.add(database.allData.get(i));
             }
         }
-        d.print();
+        sort();
+        print();
+        showResult();
+    }
+
+    public void sort()
+    {
+        Collections.sort(list);
+    }
+
+
+
+
+    public void add(publishables x)
+    {
+        list.add(x);
+    }
+
+
+    void print()
+    {
+        System.out.println(list.size());
+        for(int i=0;i<list.size();i++)
+        {
+            System.out.println(list.get(i));
+        }
+
+    }
+
+
+
+    void showResult()
+    {
+        Object[][] temp= new Object[list.size()][7];
+        for(int i=0;i<list.size();i++)
+        {
+            temp[i][0]=list.get(i).getTitle();
+            temp[i][1]=list.get(i).getAuthor();
+            temp[i][2]=list.get(i).getYear();
+            temp[i][3]=list.get(i).getVolume();
+            temp[i][4]=list.get(i).getPages();
+            temp[i][5]=list.get(i).getJournal_booktitle();
+            temp[i][6]=list.get(i).getUrl();
+        }
+        resultPanel.updateData(temp);
+        resultPanel.updateTable();
     }
 
 
