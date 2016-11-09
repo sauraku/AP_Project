@@ -18,22 +18,28 @@ public class queryHandler extends DefaultHandler
 
     private JProgressBar bar;
     private JFrame loading;
+    private loadingScreen ls;
     class loadingScreen
     {
         public loadingScreen()
         {
             loading= new JFrame();
-            loading.setSize(500,200);
+            loading.setSize(600,40);
             bar = new JProgressBar(0, 1523384);
             bar.setValue(0);
             bar.setStringPainted(true);
             loading.add(bar);
+            loading.setResizable(false);
+            loading.setUndecorated(true);
+            loading.setLocationRelativeTo(null);
+            loading.setVisible(true);
         }
     }
 
     public queryHandler()
     {
         System.setProperty("jdk.xml.entityExpansionLimit", "0");
+        ls= new loadingScreen();
         try {
             File inputFile = new File("dblp.xml");
             SAXParserFactory factory = SAXParserFactory.newInstance();
@@ -85,8 +91,9 @@ public class queryHandler extends DefaultHandler
             }
             articlebool=false;
             ++c;
-            if(c%100000==0)
+            if(c%10000==0)
             {
+                bar.setValue(c);
                 System.out.println((c/15233.94)+" %");
             }
         }if (qName.equalsIgnoreCase("dblp")) {

@@ -53,7 +53,11 @@ public class myPanel
                 {
                     panel2.setVisible(false);
                     panel3.setVisible(true);
-
+                }
+                else
+                {
+                    panel2.setVisible(false);
+                    panel3.setVisible(false);
                 }
             }
         });
