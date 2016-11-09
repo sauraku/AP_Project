@@ -106,6 +106,10 @@ public class publishables implements Comparable
         return journal_booktitle;
     }
 
+    public ArrayList<String> getRawAuthor()
+    {
+        return authors;
+    }
 
 
     @Override

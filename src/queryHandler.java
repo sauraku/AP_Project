@@ -114,7 +114,10 @@ public class queryHandler extends DefaultHandler
             pub=new publishables();
             pub.addAuthor(new String(ch, start, length));
             authorbool = false;
-        } else if (titlebool&& overall) {
+        } else if (authorbool&& overall) {
+            pub.addAuthor(new String(ch, start, length));
+            // System.out.println("Title: " + new String(ch, start, length));
+        }else if (titlebool&& overall) {
             titlebool = false;
             pub.setTitle(new String(ch, start, length));
             // System.out.println("Title: " + new String(ch, start, length));

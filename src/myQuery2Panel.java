@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by skwow on 10/27/2016.
@@ -17,6 +19,7 @@ public class myQuery2Panel
         panel3gbc.insets= new Insets(10,10,10,10);
         prepareGui();
         colorize();
+        buttonWorking();
     }
 
     private void colorize()
@@ -61,6 +64,16 @@ public class myQuery2Panel
         panel3gbc.gridx=1;
         panel3gbc.gridy=4;
         panel3.add(resetButton,panel3gbc);
+    }
+
+    public void buttonWorking()
+    {
+        searchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                query2Handler q2= new query2Handler(Integer.parseInt(field.getText()));
+            }
+        });
     }
 
     public JPanel getPanel()
