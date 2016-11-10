@@ -16,6 +16,7 @@ public class myPanel
     private JPanel panel=new JPanel(new GridBagLayout()),panel2,panel3;
     private  myQuery1Panel q1p;
     private GridBagConstraints gbc= new GridBagConstraints();
+    private JComboBox queryCombo;
 
 
     public myPanel()
@@ -30,7 +31,7 @@ public class myPanel
         typeOfQuery.addElement("Query");
         typeOfQuery.addElement("Query1");
         typeOfQuery.addElement("Query2");
-        final JComboBox queryCombo = new JComboBox(typeOfQuery);
+        queryCombo = new JComboBox(typeOfQuery);
         queryCombo.setFont(new Font("Serif", Font.BOLD, 30));
         queryCombo.setSelectedIndex(0);
         queryCombo.setPreferredSize(new Dimension(200,50));
@@ -74,6 +75,17 @@ public class myPanel
 
     public void workingOfButtons()
     {
+        q1p.resetButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                q1p.toTextField.setText("");
+                q1p.sinceYearTeaxtField.setText("");
+                q1p.nameTitleTextField.setText("");
+                q1p.fromTextField.setText("");
+            }
+        });
+
+
         q1p.searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -101,6 +113,8 @@ public class myPanel
             }
         });
     }
+
+
 
     public JPanel getPanel()
     {

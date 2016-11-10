@@ -11,7 +11,7 @@ public class query2Handler
 {
     private int limit;
     private HashMap<String,Integer> map = new HashMap<>();
-
+    private int c=0;
 
     public query2Handler(int _k)
     {
@@ -40,7 +40,7 @@ public class query2Handler
         {
             if(map.get(s)>limit)
             {
-                System.out.println(s);
+                c++;
             }
         }
         showResult();
@@ -48,7 +48,7 @@ public class query2Handler
 
     void showResult()
     {
-        Object[][] temp= new Object[map.size()][2];
+        Object[][] temp= new Object[c][2];
         int i=0;
         for(String s: map.keySet())
         {
