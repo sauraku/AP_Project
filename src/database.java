@@ -6,7 +6,7 @@ import java.util.Collections;
  */
 public class database
 {
-
+  // Database
 
 
     public static ArrayList<publishables> allData= new ArrayList<>();
