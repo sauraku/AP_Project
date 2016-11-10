@@ -11,9 +11,11 @@ public class resultPanel
     private static JTable table;
 
 
-    public static Object[][] rowData={
-            {"a","b","c","c","c","c","c"}
+    private static Object[][] rowData={
+            {" "," "," "," "," "," "," "}
     };
+
+    private static String columnNames[] = { "title","author" ,"year", "volume","pages","journal/booktitle","url" };
 
     public resultPanel()
     {
@@ -25,14 +27,15 @@ public class resultPanel
         return pane;
     }
 
-    public static void updateData(Object[][] _data)
+    public static void updateData(Object[][] _data,String[] colData)
     {
+        columnNames=colData;
         rowData=_data;
     }
 
     public static void updateTable()
     {
-        String columnNames[] = { "title","author" ,"year", "volume","pages","journal/booktitle","url" };
+
         DefaultTableModel tm = new DefaultTableModel(rowData, columnNames);
         table.setModel(tm);
     }
@@ -43,6 +46,7 @@ public class resultPanel
         table=new JTable(rowData,columnNames);
         pane=new JScrollPane(table);
     }
+
 
 
 }

@@ -83,7 +83,8 @@ public class query1Handler  {
             temp[i][5]=list.get(i).getJournal_booktitle();
             temp[i][6]=list.get(i).getUrl();
         }
-        resultPanel.updateData(temp);
+        String columnNames[] = { "title","author" ,"year", "volume","pages","journal/booktitle","url" };
+        resultPanel.updateData(temp,columnNames);
         resultPanel.updateTable();
     }
 

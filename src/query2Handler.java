@@ -43,7 +43,24 @@ public class query2Handler
                 System.out.println(s);
             }
         }
+        showResult();
+    }
 
+    void showResult()
+    {
+        Object[][] temp= new Object[map.size()][2];
+        int i=0;
+        for(String s: map.keySet())
+        {
+            if(map.get(s)>limit)
+            {
+                temp[i][0]=s;
+                temp[i++][1]=map.get(s);
+            }
+        }
+        String columnNames[] = { "Author","No. of publishes" };
+        resultPanel.updateData(temp,columnNames);
+        resultPanel.updateTable();
     }
 
 }
