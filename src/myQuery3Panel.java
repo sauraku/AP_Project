@@ -18,6 +18,9 @@ public class myQuery3Panel
 
     public myQuery3Panel()
     {
+        panel4gbc.weightx=1;
+        panel4gbc.weighty=1;
+        panel4gbc.fill = GridBagConstraints.BOTH;
         panel4gbc.insets= new Insets(10,10,10,10);
         prepareGui();
         colorize();
@@ -38,12 +41,12 @@ public class myQuery3Panel
 
     public void prepareGui()
     {
-        ThrasholdField.setPreferredSize(new Dimension(200,50));
-        ThrasholdText.setPreferredSize(new Dimension(200,50));
+        //ThrasholdField.setPreferredSize(new Dimension(200,50));
+        //ThrasholdText.setPreferredSize(new Dimension(200,50));
         ThrasholdText.setFont(new Font("Serif", Font.BOLD, 30));
         ThrasholdField.setFont(new Font("Serif", Font.BOLD, 30));
-        nameField.setPreferredSize(new Dimension(200,50));
-        nameText.setPreferredSize(new Dimension(200,50));
+        //nameField.setPreferredSize(new Dimension(200,50));
+        //nameText.setPreferredSize(new Dimension(200,50));
         nameText.setFont(new Font("Serif", Font.BOLD, 30));
         nameField.setFont(new Font("Serif", Font.BOLD, 30));
         panel4gbc.gridx=0;
@@ -67,11 +70,11 @@ public class myQuery3Panel
         resetButton=new JButton("Reset");
         resetButton.setBackground(Color.gray);
         resetButton.setFont(new Font("Serif", Font.BOLD, 30));
-        resetButton.setPreferredSize(new Dimension(200,50));
+        //resetButton.setPreferredSize(new Dimension(200,50));
         searchButton=new JButton("Search");
         searchButton.setBackground(Color.gray);
         searchButton.setFont(new Font("Serif", Font.BOLD, 30));
-        searchButton.setPreferredSize(new Dimension(200,50));
+        //searchButton.setPreferredSize(new Dimension(200,50));
         panel4gbc.gridx=0;
         panel4gbc.gridy=6;
         panel4.add(searchButton, panel4gbc);

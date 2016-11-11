@@ -16,6 +16,9 @@ public class myQuery2Panel
 
     public myQuery2Panel()
     {
+        panel3gbc.weightx=1;
+        panel3gbc.weighty=1;
+        panel3gbc.fill = GridBagConstraints.BOTH;
         panel3gbc.insets= new Insets(10,10,10,10);
         prepareGui();
         colorize();
@@ -34,8 +37,8 @@ public class myQuery2Panel
 
     public void prepareGui()
     {
-        field.setPreferredSize(new Dimension(200,50));
-        text.setPreferredSize(new Dimension(200,50));
+        //field.setPreferredSize(new Dimension(200,50));
+        //text.setPreferredSize(new Dimension(200,50));
         text.setFont(new Font("Serif", Font.BOLD, 30));
         field.setFont(new Font("Serif", Font.BOLD, 30));
         panel3gbc.gridx=0;
@@ -53,11 +56,11 @@ public class myQuery2Panel
         resetButton=new JButton("Reset");
         resetButton.setBackground(Color.gray);
         resetButton.setFont(new Font("Serif", Font.BOLD, 30));
-        resetButton.setPreferredSize(new Dimension(200,50));
+        //resetButton.setPreferredSize(new Dimension(200,50));
         searchButton=new JButton("Search");
         searchButton.setBackground(Color.gray);
         searchButton.setFont(new Font("Serif", Font.BOLD, 30));
-        searchButton.setPreferredSize(new Dimension(200,50));
+        //searchButton.setPreferredSize(new Dimension(200,50));
         panel3gbc.gridx=0;
         panel3gbc.gridy=4;
         panel3.add(searchButton,panel3gbc);

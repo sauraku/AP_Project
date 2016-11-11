@@ -49,7 +49,6 @@ public class myFrame extends JFrame
         framegbc.gridheight=6;
         framegbc.gridx=1;
         framegbc.gridy=1;
-        //framegbc.fill= GridBagConstraints.HORIZONTAL;
         frame.add(pane,framegbc);
 
        /* bar = new JProgressBar(0, 1523000);

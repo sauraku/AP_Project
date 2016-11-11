@@ -1,6 +1,7 @@
 import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 
 /**
  * Created by skwow on 10/27/2016.
@@ -44,6 +45,8 @@ public class resultPanel
     {
         String columnNames[] = { "title","author" ,"year", "volume","pages","journal/booktitle","url" };
         table=new JTable(rowData,columnNames);
+        table.setFont(new Font("Serif", Font.BOLD, 20));
+        table.setRowHeight(30);
         pane=new JScrollPane(table);
     }
 
