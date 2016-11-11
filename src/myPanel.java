@@ -13,7 +13,7 @@ import java.io.File;
  */
 public class myPanel
 {
-    private JPanel panel=new JPanel(new GridBagLayout()),panel2,panel3;
+    private JPanel panel=new JPanel(new GridBagLayout()),panel2,panel3,panel4;
     private  myQuery1Panel q1p;
     private GridBagConstraints gbc= new GridBagConstraints();
     private JComboBox queryCombo;
@@ -26,11 +26,14 @@ public class myPanel
         q1p=new myQuery1Panel();
         panel2= q1p.panel2;
         myQuery2Panel p3=new myQuery2Panel();
+        myQuery3Panel p4=new myQuery3Panel();
         panel3=p3.getPanel();
+        panel4=p4.getPanel();
         final DefaultComboBoxModel typeOfQuery = new DefaultComboBoxModel();
         typeOfQuery.addElement("Query");
         typeOfQuery.addElement("Query1");
         typeOfQuery.addElement("Query2");
+        typeOfQuery.addElement("Query3");
         queryCombo = new JComboBox(typeOfQuery);
         queryCombo.setFont(new Font("Serif", Font.BOLD, 30));
         queryCombo.setSelectedIndex(0);
@@ -49,16 +52,25 @@ public class myPanel
                 {
                     panel2.setVisible(true);
                     panel3.setVisible(false);
+                    panel4.setVisible(false);
                 }
                 else if(temp.equals(2))
                 {
                     panel2.setVisible(false);
                     panel3.setVisible(true);
+                    panel4.setVisible(false);
+                }
+                else if(temp.equals(0))
+                {
+                    panel2.setVisible(false);
+                    panel3.setVisible(false);
+                    panel4.setVisible(false);
                 }
                 else
                 {
                     panel2.setVisible(false);
                     panel3.setVisible(false);
+                    panel4.setVisible(true);
                 }
             }
         });
@@ -69,8 +81,10 @@ public class myPanel
         gbc.weighty=4;
         panel.add(panel2,gbc);
         panel.add(panel3,gbc);
+        panel.add(panel4,gbc);
         panel2.setVisible(false);
         panel3.setVisible(false);
+        panel4.setVisible(false);
     }
 
     public void workingOfButtons()
