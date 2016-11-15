@@ -171,7 +171,7 @@ public class myQuery1Panel
         fromTextField.setVisible(false);
         to= new JLabel("To");
         toTextField=new JTextField("");
-        //toTextField.setPreferredSize(new Dimension(200,50));
+        toTextField.setPreferredSize(new Dimension(90,45));
         //to.setPreferredSize(new Dimension(100,50));
         to.setForeground(Color.cyan);
         to.setFont(new Font("Serif", Font.BOLD, 30));

@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2a40aeb-bc8b-42a3-b748-9da23519009d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/myFrame.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/myFrame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/myQuery1Panel$1.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/myQuery1Panel$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/myQuery1Panel.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/myQuery1Panel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/myQuery2Panel$1.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/myQuery2Panel$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/myQuery2Panel$2.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/myQuery2Panel$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/myQuery2Panel.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/myQuery2Panel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/myQuery3Panel$1.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/myQuery3Panel$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/myQuery3Panel$2.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/myQuery3Panel$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/myQuery3Panel.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/myQuery3Panel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/queryHandler.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/queryHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/resultPanel.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/resultPanel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/myFrame.java" afterPath="$PROJECT_DIR$/src/myFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/myPanel.java" afterPath="$PROJECT_DIR$/src/myPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/myQuery1Panel.java" afterPath="$PROJECT_DIR$/src/myQuery1Panel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/myQuery2Panel.java" afterPath="$PROJECT_DIR$/src/myQuery2Panel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/myQuery3Panel.java" afterPath="$PROJECT_DIR$/src/myQuery3Panel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/queryHandler.java" afterPath="$PROJECT_DIR$/src/queryHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resultPanel.java" afterPath="$PROJECT_DIR$/src/resultPanel.java" />
     </list>
     <ignored path="AP_Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,8 +29,8 @@
       <file leaf-file-name="myQuery1Panel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/myQuery1Panel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="206" column="65" selection-start-line="206" selection-start-column="65" selection-end-line="206" selection-end-column="65" />
+            <state relative-caret-position="262">
+              <caret line="173" column="52" selection-start-line="173" selection-start-column="52" selection-end-line="173" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -53,60 +39,9 @@
       <file leaf-file-name="myPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/myPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="58" column="45" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
+            <state relative-caret-position="300">
+              <caret line="77" column="54" selection-start-line="77" selection-start-column="54" selection-end-line="77" selection-end-column="54" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="query1Handler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/query1Handler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="611">
-              <caret line="86" column="47" selection-start-line="86" selection-start-column="47" selection-end-line="86" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="myQuery2Panel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/myQuery2Panel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="20" column="49" selection-start-line="18" selection-start-column="7" selection-end-line="20" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2441#2442#0" expanded="true" />
-                <element signature="e#2490#2491#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="publishables.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/publishables.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-              <folding>
-                <element signature="e#2104#2105#0" expanded="true" />
-                <element signature="e#2134#2135#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="myQuery3Panel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/myQuery3Panel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3170#3171#0" expanded="true" />
-                <element signature="e#3228#3229#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -114,7 +49,7 @@
       <file leaf-file-name="resultPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resultPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
+            <state relative-caret-position="550">
               <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
               <folding />
             </state>
@@ -124,7 +59,7 @@
       <file leaf-file-name="queryHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/queryHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="900">
               <caret line="43" column="44" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
               <folding />
             </state>
@@ -134,8 +69,8 @@
       <file leaf-file-name="myFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/myFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
+            <state relative-caret-position="1000">
+              <caret line="48" column="47" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -193,12 +128,12 @@
         <option value="$PROJECT_DIR$/src/query1Handler.java" />
         <option value="$PROJECT_DIR$/src/query2Handler.java" />
         <option value="$PROJECT_DIR$/src/entityResolver.java" />
-        <option value="$PROJECT_DIR$/src/myPanel.java" />
         <option value="$PROJECT_DIR$/src/resultPanel.java" />
         <option value="$PROJECT_DIR$/src/myQuery2Panel.java" />
         <option value="$PROJECT_DIR$/src/myQuery3Panel.java" />
-        <option value="$PROJECT_DIR$/src/myQuery1Panel.java" />
         <option value="$PROJECT_DIR$/src/queryHandler.java" />
+        <option value="$PROJECT_DIR$/src/myPanel.java" />
+        <option value="$PROJECT_DIR$/src/myQuery1Panel.java" />
         <option value="$PROJECT_DIR$/src/myFrame.java" />
       </list>
     </option>
@@ -269,8 +204,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -696,7 +631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -880,7 +814,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -896,10 +829,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="e#2104#2105#0" expanded="true" />
-            <element signature="e#2134#2135#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -911,17 +841,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/myPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="58" column="45" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/query1Handler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
+        <state relative-caret-position="1750">
           <caret line="86" column="47" selection-start-line="86" selection-start-column="47" selection-end-line="86" selection-end-column="47" />
           <folding />
         </state>
@@ -929,7 +851,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/myQuery2Panel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
+        <state relative-caret-position="425">
           <caret line="20" column="49" selection-start-line="18" selection-start-column="7" selection-end-line="20" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -941,31 +863,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/queryHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="900">
           <caret line="43" column="44" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resultPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/myQuery1Panel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="206" column="65" selection-start-line="206" selection-start-column="65" selection-end-line="206" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/myQuery3Panel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
+        <state relative-caret-position="125">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -975,10 +881,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/myPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="77" column="54" selection-start-line="77" selection-start-column="54" selection-end-line="77" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myQuery1Panel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="173" column="52" selection-start-line="173" selection-start-column="52" selection-end-line="173" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resultPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/myFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
+        <state relative-caret-position="1000">
+          <caret line="48" column="47" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
           <folding />
         </state>
       </provider>

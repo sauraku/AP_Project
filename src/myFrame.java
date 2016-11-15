@@ -11,7 +11,6 @@ public class myFrame extends JFrame
 {
     private JFrame frame;
     private JLabel heading;
-    private static JProgressBar bar;
 
 
     public myFrame(myPanel panel)
@@ -30,6 +29,7 @@ public class myFrame extends JFrame
         framegbc.gridx=0;
         framegbc.gridy=0;
         framegbc.gridwidth=5;
+        framegbc.gridheight=1;
         frame.add(heading,framegbc);
 
         frame.addWindowListener(new WindowAdapter() {
@@ -39,26 +39,22 @@ public class myFrame extends JFrame
         });
 
         framegbc.gridwidth=1;
+        framegbc.gridheight=6;
         framegbc.gridx=0;
         framegbc.gridy=1;
+        framegbc.anchor= GridBagConstraints.WEST;
         frame.add(panel.getPanel(),framegbc);
 
         JScrollPane pane= new resultPanel().getPane();
-        pane.setPreferredSize(new Dimension(800,800));
+        pane.setPreferredSize(new Dimension(600,800));
         framegbc.gridwidth=4;
         framegbc.gridheight=6;
         framegbc.gridx=1;
         framegbc.gridy=1;
+        framegbc.weightx=1.0;
+        framegbc.weighty=1.0;
+        framegbc.anchor= GridBagConstraints.EAST;
         frame.add(pane,framegbc);
-
-       /* bar = new JProgressBar(0, 1523000);
-        bar.setValue(0);
-        bar.setStringPainted(true);
-        framegbc.gridwidth=5;
-        framegbc.gridheight=1;
-        framegbc.gridx=0;
-        framegbc.gridy=2;
-        frame.add(bar,framegbc);*/
 
 
         frame.getContentPane().setBackground(Color.GRAY);
@@ -66,10 +62,6 @@ public class myFrame extends JFrame
         frame.setVisible(true);
     }
 
-    public static JProgressBar getBar()
-    {
-        return bar;
-    }
 
 
 }

@@ -75,7 +75,7 @@ public class myPanel
             }
         });
         workingOfButtons();
-
+        panel.setPreferredSize(new Dimension(800,800));
         gbc.gridx=0;
         gbc.gridy=1;
         gbc.weighty=4;
