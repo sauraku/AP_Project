@@ -48,17 +48,22 @@ public class query2Handler
 
     void showResult()
     {
-        Object[][] temp= new Object[c][2];
+        if(c==0)
+        {
+            return;
+        }
+        Object[][] temp= new Object[c][3];
         int i=0;
         for(String s: map.keySet())
         {
             if(map.get(s)>limit)
             {
-                temp[i][0]=s;
-                temp[i++][1]=map.get(s);
+                temp[i][0]=i+1;
+                temp[i][1]=s;
+                temp[i++][2]=map.get(s);
             }
         }
-        String columnNames[] = { "Author","No. of publishes" };
+        String columnNames[] = { "S.NO.","Author","No. of publishes" };
         resultPanel.updateData(temp,columnNames);
         resultPanel.updateTable();
     }

@@ -2,6 +2,8 @@ import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by skwow on 10/27/2016.
@@ -13,18 +15,20 @@ public class resultPanel
     private GridBagConstraints gbcrp= new GridBagConstraints();
     private JButton next,back;
     private JPanel panel= new JPanel(new GridBagLayout());
+    private static int track=0;
 
     private static Object[][] rowData={
-            {" "," "," "," "," "," "," "}
+            {" "," "," "," "," "," "," "," " }
     };
 
-    private static String columnNames[] = { "title","author" ,"year", "volume","pages","journal/booktitle","url" };
+    private static String columnNames[] = { "S.NO.","title","author" ,"year", "volume","pages","journal/booktitle","url" };
 
     public resultPanel()
     {
         gbcrp.insets=new Insets(10,10,10,10);
-        prepareButtons();
         buildGui();
+        prepareButtons();
+        workingOfButtons();
     }
 
     public JPanel getPane()
@@ -40,24 +44,38 @@ public class resultPanel
 
     public static void updateTable()
     {
-
-        DefaultTableModel tm = new DefaultTableModel(rowData, columnNames);
+        if(rowData==null)
+        {
+            return;
+        }
+        Object[][] rowDataTemp=new Object[20][rowData[0].length];
+        for(int i=track;i<rowData.length && i<track+20;i++)
+        {
+            for(int j=0;j<rowData[0].length;j++)
+            {
+                System.out.println(i+" "+j);
+                rowDataTemp[i-track][j]=rowData[i][j];
+            }
+        }
+        DefaultTableModel tm = new DefaultTableModel(rowDataTemp, columnNames);
         table.setModel(tm);
     }
 
     private void buildGui()
     {
-        String columnNames[] = { "title","author" ,"year", "volume","pages","journal/booktitle","url" };
+        String columnNames[] = { "S.NO.","title","author" ,"year", "volume","pages","journal/booktitle","url" };
         table=new JTable(rowData,columnNames);
         table.setFont(new Font("Serif", Font.BOLD, 20));
         table.setRowHeight(30);
         pane=new JScrollPane(table);
-        pane.setPreferredSize(new Dimension(800,600));
+        //pane.setPreferredSize(new Dimension(800,600));
         panel.setOpaque(false);
+        gbcrp.weightx=1.0;
+        gbcrp.weighty=1.0;
         gbcrp.gridx=0;
         gbcrp.gridy=0;
         gbcrp.gridwidth=4;
-        //gbcrp.fill= GridBagConstraints.BOTH;
+        gbcrp.fill= GridBagConstraints.BOTH;
         panel.add(pane,gbcrp);
     }
 
@@ -71,6 +89,9 @@ public class resultPanel
         next.setBackground(Color.cyan);
         next.setFont(new Font("Serif", Font.BOLD, 30));
         next.setPreferredSize(new Dimension(200,50));
+        gbcrp.fill= GridBagConstraints.NONE;
+        gbcrp.weightx=1;
+        gbcrp.weighty=0;
         gbcrp.gridwidth=1;
         gbcrp.gridx=0;
         gbcrp.gridy=1;
@@ -78,6 +99,25 @@ public class resultPanel
         gbcrp.gridx=3;
         gbcrp.gridy=1;
         panel.add(next,gbcrp);
+    }
+
+    private void workingOfButtons()
+    {
+        next.addActionListener(e -> {
+            if(track+20<rowData.length)
+            {
+                track=track+20;
+                updateTable();
+            }
+        });
+
+        back.addActionListener(e -> {
+            if(track>0)
+            {
+                track=track-20;
+                updateTable();
+            }
+        });
     }
 
 

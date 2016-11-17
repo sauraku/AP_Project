@@ -10,7 +10,7 @@ import java.io.File;
 /**
  * Created by skwow on 11/8/2016.
  */
-public class queryHandler extends DefaultHandler
+public class parser extends DefaultHandler
 {
     private boolean authorbool = false,ignorebool=false,overall=false,articlebool, titlebool = false, yearbool = false, urlbool = false,volumebool=false,pagebool=false,journalbool=false;
     int c=0;
@@ -36,7 +36,7 @@ public class queryHandler extends DefaultHandler
         }
     }
 
-    public queryHandler()
+    public parser()
     {
         System.setProperty("jdk.xml.entityExpansionLimit", "0");
         ls= new loadingScreen();

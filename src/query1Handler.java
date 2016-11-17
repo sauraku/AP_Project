@@ -72,18 +72,23 @@ public class query1Handler  {
 
     void showResult()
     {
-        Object[][] temp= new Object[list.size()][7];
+        if(list.size()==0)
+        {
+            return;
+        }
+        Object[][] temp= new Object[list.size()][8];
         for(int i=0;i<list.size();i++)
         {
-            temp[i][0]=list.get(i).getTitle();
-            temp[i][1]=list.get(i).getAuthor();
-            temp[i][2]=list.get(i).getYear();
-            temp[i][3]=list.get(i).getVolume();
-            temp[i][4]=list.get(i).getPages();
-            temp[i][5]=list.get(i).getJournal_booktitle();
-            temp[i][6]=list.get(i).getUrl();
+            temp[i][0]=i+1;
+            temp[i][1]=list.get(i).getTitle();
+            temp[i][2]=list.get(i).getAuthor();
+            temp[i][3]=list.get(i).getYear();
+            temp[i][4]=list.get(i).getVolume();
+            temp[i][5]=list.get(i).getPages();
+            temp[i][6]=list.get(i).getJournal_booktitle();
+            temp[i][7]=list.get(i).getUrl();
         }
-        String columnNames[] = { "title","author" ,"year", "volume","pages","journal/booktitle","url" };
+        String columnNames[] = {"S.NO.", "title","author" ,"year", "volume","pages","journal/booktitle","url" };
         resultPanel.updateData(temp,columnNames);
         resultPanel.updateTable();
     }
