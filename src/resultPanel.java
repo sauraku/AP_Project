@@ -10,7 +10,9 @@ public class resultPanel
 {
     private JScrollPane pane;
     private static JTable table;
+    private GridBagConstraints gbcrp= new GridBagConstraints();
     private JButton next,back;
+    private JPanel panel= new JPanel(new GridBagLayout());
 
     private static Object[][] rowData={
             {" "," "," "," "," "," "," "}
@@ -20,12 +22,14 @@ public class resultPanel
 
     public resultPanel()
     {
+        gbcrp.insets=new Insets(10,10,10,10);
+        prepareButtons();
         buildGui();
     }
 
-    public JScrollPane getPane()
+    public JPanel getPane()
     {
-        return pane;
+        return panel;
     }
 
     public static void updateData(Object[][] _data,String[] colData)
@@ -48,6 +52,32 @@ public class resultPanel
         table.setFont(new Font("Serif", Font.BOLD, 20));
         table.setRowHeight(30);
         pane=new JScrollPane(table);
+        pane.setPreferredSize(new Dimension(800,600));
+        panel.setOpaque(false);
+        gbcrp.gridx=0;
+        gbcrp.gridy=0;
+        gbcrp.gridwidth=4;
+        //gbcrp.fill= GridBagConstraints.BOTH;
+        panel.add(pane,gbcrp);
+    }
+
+    public void prepareButtons()
+    {
+        back=new JButton("Back");
+        back.setBackground(Color.cyan);
+        back.setFont(new Font("Serif", Font.BOLD, 30));
+        back.setPreferredSize(new Dimension(200,50));
+        next=new JButton("Next");
+        next.setBackground(Color.cyan);
+        next.setFont(new Font("Serif", Font.BOLD, 30));
+        next.setPreferredSize(new Dimension(200,50));
+        gbcrp.gridwidth=1;
+        gbcrp.gridx=0;
+        gbcrp.gridy=1;
+        panel.add(back,gbcrp);
+        gbcrp.gridx=3;
+        gbcrp.gridy=1;
+        panel.add(next,gbcrp);
     }
 
 

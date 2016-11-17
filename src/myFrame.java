@@ -45,8 +45,8 @@ public class myFrame extends JFrame
         framegbc.anchor= GridBagConstraints.WEST;
         frame.add(panel.getPanel(),framegbc);
 
-        JScrollPane pane= new resultPanel().getPane();
-        pane.setPreferredSize(new Dimension(600,800));
+        JPanel pane= new resultPanel().getPane();
+        pane.setPreferredSize(new Dimension(800,800));
         framegbc.gridwidth=4;
         framegbc.gridheight=6;
         framegbc.gridx=1;

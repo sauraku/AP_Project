@@ -51,10 +51,10 @@ public class myQuery1Panel
         searchButton.setFont(new Font("Serif", Font.BOLD, 30));
        // searchButton.setPreferredSize(new Dimension(200,50));
         panel2gbc.gridx=0;
-        panel2gbc.gridy=8;
+        panel2gbc.gridy=9;
         panel2.add(searchButton,panel2gbc);
         panel2gbc.gridx=1;
-        panel2gbc.gridy=8;
+        panel2gbc.gridy=9;
         panel2.add(resetButton,panel2gbc);
     }
 
@@ -64,6 +64,8 @@ public class myQuery1Panel
         panel2gbc.gridx=0;
         panel2.add(new JLabel("         "),panel2gbc);
         panel2gbc.gridy=5;
+        panel2.add(new JLabel("         "),panel2gbc);
+        panel2gbc.gridy=6;
         panel2.add(new JLabel("         "),panel2gbc);
         sort = new CheckboxGroup();
         chkSortByYear = new Checkbox("Sort By Year",sort,false);
@@ -78,10 +80,10 @@ public class myQuery1Panel
         //chkSortByRelevance.setPreferredSize(new Dimension(300,50));
         panel2gbc.gridwidth=2;
         panel2gbc.gridx=0;
-        panel2gbc.gridy=6;
+        panel2gbc.gridy=7;
         panel2.add(chkSortByYear,panel2gbc);
         panel2gbc.gridx=0;
-        panel2gbc.gridy=7;
+        panel2gbc.gridy=8;
         panel2.add(chkSortByRelevance,panel2gbc);
         panel2gbc.gridwidth=1;
     }
