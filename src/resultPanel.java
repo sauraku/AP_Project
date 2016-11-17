@@ -10,7 +10,7 @@ public class resultPanel
 {
     private JScrollPane pane;
     private static JTable table;
-
+    private JButton next,back;
 
     private static Object[][] rowData={
             {" "," "," "," "," "," "," "}
