@@ -47,7 +47,7 @@ public class myFrame extends JFrame
 
         JPanel pane= new resultPanel().getPane();
         pane.setPreferredSize(new Dimension(800,800));
-        framegbc.gridwidth=4;
+        framegbc.gridwidth=1;
         framegbc.gridheight=6;
         framegbc.gridx=1;
         framegbc.gridy=1;
