@@ -45,10 +45,7 @@ public class resultPanel
 
     public static void updateTable()
     {
-        if(rowData==null)
-        {
-            return;
-        }
+        //System.out.println("-------"+rowData.length);
         Object[][] rowDataTemp=new Object[20][rowData[0].length];
         for(int i=track;i<rowData.length && i<track+20;i++)
         {

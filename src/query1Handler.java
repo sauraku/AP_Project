@@ -40,7 +40,7 @@ public class query1Handler  {
             }
         }
         sort();
-        print();
+        //print();
         showResult();
     }
 
@@ -74,7 +74,11 @@ public class query1Handler  {
     {
         if(list.size()==0)
         {
-            return;
+            try {
+                throw new myOwnExeption("No result Found");
+            } catch (myOwnExeption myOwnExeption) {
+                return;
+            }
         }
         Object[][] temp= new Object[list.size()][8];
         for(int i=0;i<list.size();i++)

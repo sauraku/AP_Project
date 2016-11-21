@@ -105,8 +105,23 @@ public class myPanel
             public void actionPerformed(ActionEvent e) {
 
                 String searchBy = String.valueOf(q1p.searchByCombo.getSelectedItem());
+                if(searchBy.charAt(0)=='S'){try {
+                    throw new myOwnExeption("please select from searchBy dropdown");
+                } catch (myOwnExeption myOwnExeption) {
+                    return;
+                } }
                 String name_title = q1p.nameTitleTextField.getText();
+                if(name_title.equals("")){try {
+                    throw new myOwnExeption("please fill name/title field");
+                } catch (myOwnExeption myOwnExeption) {
+                    return;
+                } }
                 String yearSelect = String.valueOf(q1p.yearCombo.getSelectedItem());
+                if(yearSelect.charAt(0)=='Y'){try {
+                    throw new myOwnExeption("please select from yearSelect dropdown");
+                } catch (myOwnExeption myOwnExeption) {
+                    return;
+                } }
                 String sortBy;
                 try {
                     sortBy = q1p.sort.getSelectedCheckbox().getName();

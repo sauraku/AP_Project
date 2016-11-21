@@ -50,7 +50,11 @@ public class query2Handler
     {
         if(c==0)
         {
-            return;
+            try {
+                throw new myOwnExeption("No result Found");
+            } catch (myOwnExeption myOwnExeption) {
+                return;
+            }
         }
         Object[][] temp= new Object[c][3];
         int i=0;
