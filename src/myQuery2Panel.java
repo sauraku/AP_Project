@@ -81,7 +81,13 @@ public class myQuery2Panel
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                query2Handler q2= new query2Handler(Integer.parseInt(field.getText()));
+                int k= Integer.parseInt(field.getText());
+                try {
+                    if (k < 0) {
+                        throw new myOwnExeption("threshold can't be negetive!");
+                    }
+                    query2Handler q2 = new query2Handler(k);
+                } catch (myOwnExeption myOwnExeption) { }
             }
         });
     }

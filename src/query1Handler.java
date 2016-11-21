@@ -15,7 +15,7 @@ import java.util.concurrent.Executors;
  *
  */
 
-
+//sortby 0== year 1==relevence
 public class query1Handler  {
 
     private int sortby,from,to;

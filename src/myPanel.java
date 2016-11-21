@@ -103,30 +103,50 @@ public class myPanel
         q1p.searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                String searchBy = String.valueOf(q1p.searchByCombo.getSelectedItem());
+                String name_title = q1p.nameTitleTextField.getText();
+                String yearSelect = String.valueOf(q1p.yearCombo.getSelectedItem());
+                String sortBy;
                 try {
-                    String searchBy = String.valueOf(q1p.searchByCombo.getSelectedItem());
-                    String name_title = q1p.nameTitleTextField.getText();
-                    String yearSelect = String.valueOf(q1p.yearCombo.getSelectedItem());
-                    //System.out.println(searchBy+" "+name_title+" "+yearSelect);
-                    int from, to;
-                    if (yearSelect.charAt(0) == 'S') {
-                        from = Integer.parseInt(q1p.sinceYearTeaxtField.getText());
-                        to = 9999;
-                    } else {
-                        from = Integer.parseInt(q1p.fromTextField.getText());
-                        to = Integer.parseInt(q1p.toTextField.getText());
-                    }
-                    if (searchBy.charAt(0) == 'N') {
-                        if (q1p.sort.getSelectedCheckbox().toString().charAt(26) == '0') {
-                            query1Handler q1 = new query1Handler(name_title, 1, from, to);
-                            q1.doWork();
-                        }
+                    sortBy = q1p.sort.getSelectedCheckbox().getName();
+                } catch (Exception e1){
+                    try {
+                        throw new myOwnExeption("please select one of the radio buttons");
+                    } catch (myOwnExeption myOwnExeption) {
+                        return;
                     }
                 }
-                catch (Exception ex)
+                //System.out.println(searchBy+" "+name_title+" "+yearSelect+" "+sortBy);
+                int from, to;
+                if (yearSelect.charAt(0) == 'S') {
+                    from = Integer.parseInt(q1p.sinceYearTeaxtField.getText());
+                    to = 2016;
+                } else {
+                    from = Integer.parseInt(q1p.fromTextField.getText());
+                    to = Integer.parseInt(q1p.toTextField.getText());
+                }
+                if(from >2016 || from <0 || to >2016 || to<0)
                 {
-                    myOwnExeption exeption= new myOwnExeption("please fill the forrm correctly!");
+                    try {
+                        throw new myOwnExeption("year range is 0-2016 only!");
+                    } catch (myOwnExeption myOwnExeption) {return;}
                 }
+                if(to<from)
+                {
+                    try {
+                        throw new myOwnExeption("\"To\" can't be less than \"From\"");
+                    } catch (myOwnExeption myOwnExeption) {return;}
+                }
+                if (searchBy.charAt(0) == 'N') {
+                    if (q1p.sort.getSelectedCheckbox().toString().charAt(26) == '0') {
+                        query1Handler q1 = new query1Handler(name_title, sortBy.charAt(8)-'0', from, to);
+                        q1.doWork();
+                    }
+                }if (searchBy.charAt(0) == 'T') {
+                    //to implement
+                }
+
 
             }
         });
