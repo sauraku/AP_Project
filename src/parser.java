@@ -41,7 +41,7 @@ public class parser extends DefaultHandler
         System.setProperty("jdk.xml.entityExpansionLimit", "0");
         ls= new loadingScreen();
         try {
-            File inputFile = new File("dblps.xml");
+            File inputFile = new File("dblp.xml");
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser saxParser = factory.newSAXParser();
             saxParser.parse(inputFile, this);

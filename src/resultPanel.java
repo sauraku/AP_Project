@@ -13,7 +13,7 @@ public class resultPanel
     private JScrollPane pane;
     private static JTable table;
     private GridBagConstraints gbcrp= new GridBagConstraints();
-    private JButton next,back;
+    private static JButton next,back;
     private JPanel panel= new JPanel(new GridBagLayout());
     private static int track=0;
 
@@ -40,6 +40,7 @@ public class resultPanel
     {
         columnNames=colData;
         rowData=_data;
+        if(rowData.length>20) {next.setEnabled(true);}
     }
 
     public static void updateTable()
@@ -89,6 +90,8 @@ public class resultPanel
         next.setBackground(Color.cyan);
         next.setFont(new Font("Serif", Font.BOLD, 30));
         next.setPreferredSize(new Dimension(200,50));
+        back.setEnabled(false);
+        next.setEnabled(false);
         gbcrp.fill= GridBagConstraints.NONE;
         gbcrp.weightx=1;
         gbcrp.weighty=0;
@@ -106,16 +109,26 @@ public class resultPanel
         next.addActionListener(e -> {
             if(track+20<rowData.length)
             {
+                back.setEnabled(true);
                 track=track+20;
                 updateTable();
+            }
+            else
+            {
+                next.setEnabled(false);
             }
         });
 
         back.addActionListener(e -> {
             if(track>0)
             {
+                next.setEnabled(true);
                 track=track-20;
                 updateTable();
+            }
+            else
+            {
+                back.setEnabled(false);
             }
         });
     }

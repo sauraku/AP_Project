@@ -103,25 +103,29 @@ public class myPanel
         q1p.searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String searchBy = String.valueOf(q1p.searchByCombo.getSelectedItem());
-                String name_title=q1p.nameTitleTextField.getText();
-                String yearSelect = String.valueOf(q1p.yearCombo.getSelectedItem());
-                //System.out.println(searchBy+" "+name_title+" "+yearSelect);
-                int from,to;
-                if(yearSelect.charAt(0)=='S')
-                {
-                    from= Integer.parseInt(q1p.sinceYearTeaxtField.getText());
-                    to=9999;  }  else  {
-                    from= Integer.parseInt(q1p.fromTextField.getText());
-                    to=Integer.parseInt(q1p.toTextField.getText());
-                }
-                if(searchBy.charAt(0)=='N')
-                {
-                    if(q1p.sort.getSelectedCheckbox().toString().charAt(26)=='0')
-                    {
-                        query1Handler q1= new query1Handler(name_title,1,from,to);
-                        q1.doWork();
+                try {
+                    String searchBy = String.valueOf(q1p.searchByCombo.getSelectedItem());
+                    String name_title = q1p.nameTitleTextField.getText();
+                    String yearSelect = String.valueOf(q1p.yearCombo.getSelectedItem());
+                    //System.out.println(searchBy+" "+name_title+" "+yearSelect);
+                    int from, to;
+                    if (yearSelect.charAt(0) == 'S') {
+                        from = Integer.parseInt(q1p.sinceYearTeaxtField.getText());
+                        to = 9999;
+                    } else {
+                        from = Integer.parseInt(q1p.fromTextField.getText());
+                        to = Integer.parseInt(q1p.toTextField.getText());
                     }
+                    if (searchBy.charAt(0) == 'N') {
+                        if (q1p.sort.getSelectedCheckbox().toString().charAt(26) == '0') {
+                            query1Handler q1 = new query1Handler(name_title, 1, from, to);
+                            q1.doWork();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    myOwnExeption exeption= new myOwnExeption("please fill the forrm correctly!");
                 }
 
             }
