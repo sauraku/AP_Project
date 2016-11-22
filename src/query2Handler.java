@@ -1,7 +1,3 @@
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
-
 import java.util.HashMap;
 
 /**
@@ -21,17 +17,17 @@ public class query2Handler
 
     public void doWork()
     {
-        for(int i=0;i<database.allData.size();i++)
+        for(int i = 0; i< data.allData.size(); i++)
         {
-            for(String a : database.allData.get(i).getRawAuthor())
+            for(String a : data.allData.get(i).getRawAuthor())
             {
                 map.put(a,0);
             }
         }
         System.out.println(map.size());
-        for(int i=0;i<database.allData.size();i++)
+        for(int i = 0; i< data.allData.size(); i++)
         {
-            for(String a : database.allData.get(i).getRawAuthor())
+            for(String a : data.allData.get(i).getRawAuthor())
             {
                 map.put(a, map.get(a) + 1);
             }

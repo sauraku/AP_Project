@@ -41,7 +41,7 @@ public class parser extends DefaultHandler
         System.setProperty("jdk.xml.entityExpansionLimit", "0");
         ls= new loadingScreen();
         try {
-            File inputFile = new File("dblp.xml");
+            File inputFile = new File("dblps.xml");
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser saxParser = factory.newSAXParser();
             saxParser.parse(inputFile, this);
@@ -86,7 +86,7 @@ public class parser extends DefaultHandler
         if (qName.equalsIgnoreCase("article")) {
             if(overall)
             {
-                database.allData.add(pub);
+                data.allData.add(pub);
                 overall=false;
             }
             articlebool=false;
@@ -97,7 +97,7 @@ public class parser extends DefaultHandler
                 System.out.println((c/15233.94)+" %");
             }
         }if (qName.equalsIgnoreCase("dblp")) {
-            System.out.println("100 % "+database.allData.size());
+            System.out.println("100 % "+ data.allData.size());
             loading.dispose();
         }
     }

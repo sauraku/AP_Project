@@ -4,7 +4,7 @@ import java.util.Collections;
 /**
  * Created by skwow on 10/27/2016.
  */
-public class database
+public class data
 {
 
 
