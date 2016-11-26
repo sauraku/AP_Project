@@ -65,7 +65,7 @@ public class resultPanel
         String columnNames[] = { "S.NO.","title","author" ,"year", "volume","pages","journal/booktitle","url" };
         table=new JTable(rowData,columnNames);
         table.setFont(new Font("Serif", Font.BOLD, 20));
-        table.setRowHeight(30);
+        table.setRowHeight(40);
         pane=new JScrollPane(table);
         //pane.setPreferredSize(new Dimension(800,600));
         panel.setOpaque(false);
