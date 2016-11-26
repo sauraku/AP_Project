@@ -86,7 +86,7 @@ public class parser extends DefaultHandler
         if (qName.equalsIgnoreCase("article")) {
             if(overall)
             {
-                data.allData.add(pub);
+                data.getAllData().add(pub);
                 overall=false;
             }
             articlebool=false;
@@ -97,7 +97,7 @@ public class parser extends DefaultHandler
                 System.out.println((c/15233.94)+" %");
             }
         }if (qName.equalsIgnoreCase("dblp")) {
-            System.out.println("100 % "+ data.allData.size());
+            System.out.println("100 % "+ data.getAllData().size());
             loading.dispose();
         }
     }

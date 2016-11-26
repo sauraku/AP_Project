@@ -38,6 +38,7 @@ public class resultPanel
 
     public static void updateData(Object[][] _data,String[] colData)
     {
+        track=0;
         columnNames=colData;
         rowData=_data;
         if(rowData.length>20) {next.setEnabled(true);}

@@ -40,10 +40,25 @@ public class myPanel
         queryCombo.setPreferredSize(new Dimension(200,50));
         queryCombo.setBackground(Color.cyan);
         gbc.gridx=0;
-        gbc.gridy=0;
-        //gbc.fill= GridBagConstraints.HORIZONTAL;
+        gbc.gridy=0;//gbc.fill= GridBagConstraints.HORIZONTAL;
         panel.add(queryCombo,gbc);
+        workingOfResetButton();
+        workingOfSearchButton();
+        workingOfQueryCombo();
+        panel.setPreferredSize(new Dimension(600,800));
+        //gbc.gridx=0;
+        gbc.gridy=1;
+        gbc.weighty=4;
+        panel.add(panel2,gbc);
+        panel.add(panel3,gbc);
+        panel.add(panel4,gbc);
+        panel2.setVisible(false);
+        panel3.setVisible(false);
+        panel4.setVisible(false);
+    }
 
+    public void workingOfQueryCombo()
+    {
         queryCombo.addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
@@ -74,20 +89,9 @@ public class myPanel
                 }
             }
         });
-        workingOfButtons();
-        panel.setPreferredSize(new Dimension(600,800));
-        gbc.gridx=0;
-        gbc.gridy=1;
-        gbc.weighty=4;
-        panel.add(panel2,gbc);
-        panel.add(panel3,gbc);
-        panel.add(panel4,gbc);
-        panel2.setVisible(false);
-        panel3.setVisible(false);
-        panel4.setVisible(false);
     }
 
-    public void workingOfButtons()
+    public void workingOfResetButton()
     {
         q1p.resetButton.addActionListener(new ActionListener() {
             @Override
@@ -98,12 +102,13 @@ public class myPanel
                 q1p.fromTextField.setText("");
             }
         });
+    }
 
-
+    public void workingOfSearchButton()
+    {
         q1p.searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 String searchBy = String.valueOf(q1p.searchByCombo.getSelectedItem());
                 if(searchBy.charAt(0)=='S'){try {
                     throw new myOwnExeption("please select from searchBy dropdown");
@@ -131,8 +136,7 @@ public class myPanel
                     } catch (myOwnExeption myOwnExeption) {
                         return;
                     }
-                }
-                //System.out.println(searchBy+" "+name_title+" "+yearSelect+" "+sortBy);
+                }//System.out.println(searchBy+" "+name_title+" "+yearSelect+" "+sortBy);
                 int from, to;
                 if (yearSelect.charAt(0) == 'S') {
                     from = Integer.parseInt(q1p.sinceYearTeaxtField.getText());
@@ -161,8 +165,6 @@ public class myPanel
                 }if (searchBy.charAt(0) == 'T') {
                     //to implement
                 }
-
-
             }
         });
     }

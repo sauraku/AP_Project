@@ -23,11 +23,11 @@ public class query1Handler  {
     // sort==1 for year and ===2 for relevance
     public void doWork()
     {
-        for(int i = 0; i< data.allData.size(); i++)
+        for(int i = 0; i< data.getAllData().size(); i++)
         {
-            if(data.allData.get(i).getAuthor().equals(name_title)&& data.allData.get(i).getYear()>=from && data.allData.get(i).getYear()<=to)
+            if(data.getAllData().get(i).getAuthor().equals(name_title)&& data.getAllData().get(i).getYear()>=from && data.getAllData().get(i).getYear()<=to)
             {
-                list.add(data.allData.get(i));
+                list.add(data.getAllData().get(i));
             }
         }
         sort();

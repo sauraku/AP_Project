@@ -17,17 +17,17 @@ public class query2Handler
 
     public void doWork()
     {
-        for(int i = 0; i< data.allData.size(); i++)
+        for(int i = 0; i< data.getAllData().size(); i++)
         {
-            for(String a : data.allData.get(i).getRawAuthor())
+            for(String a : data.getAllData().get(i).getRawAuthor())
             {
                 map.put(a,0);
             }
         }
         System.out.println(map.size());
-        for(int i = 0; i< data.allData.size(); i++)
+        for(int i = 0; i< data.getAllData().size(); i++)
         {
-            for(String a : data.allData.get(i).getRawAuthor())
+            for(String a : data.getAllData().get(i).getRawAuthor())
             {
                 map.put(a, map.get(a) + 1);
             }
