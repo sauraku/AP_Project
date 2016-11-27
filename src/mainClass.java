@@ -8,3 +8,5 @@ public class mainClass {
 }
 
 //artist shows only.. gotta fix it
+//also make sort by relevence robust by matching substringss
+//entity resolution

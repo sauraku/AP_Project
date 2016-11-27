@@ -26,18 +26,38 @@ public class query1Handler  {
     public void doWork()
     {
         //System.out.println("nametitle="+nametitle);
-        if(nametitle==0) {
-            for (int i = 0; i < data.getAllData().size(); i++) {
-                if (data.getAllData().get(i).getAuthor().equalsIgnoreCase(name_title) && data.getAllData().get(i).getYear() >= from && data.getAllData().get(i).getYear() <= to) {
-                    list.add(data.getAllData().get(i));
+        if(sortby==0) {
+            if (nametitle == 0) {
+                for (int i = 0; i < data.getAllData().size(); i++) {
+                    if (data.getAllData().get(i).getAuthor().equalsIgnoreCase(name_title) && data.getAllData().get(i).getYear() >= from && data.getAllData().get(i).getYear() <= to) {
+                        list.add(data.getAllData().get(i));
+                    }
+                }
+            } else if (nametitle == 1) {
+                for (int i = 0; i < data.getAllData().size(); i++) {
+                    if (data.getAllData().get(i).getTitle().equalsIgnoreCase(name_title) && data.getAllData().get(i).getYear() >= from && data.getAllData().get(i).getYear() <= to) {
+                        list.add(data.getAllData().get(i));
+                    }
                 }
             }
         }
-        else if(nametitle==1)
+        else if(sortby==1)
         {
-            for (int i = 0; i < data.getAllData().size(); i++) {
-                if (data.getAllData().get(i).getTitle().equalsIgnoreCase(name_title) && data.getAllData().get(i).getYear() >= from && data.getAllData().get(i).getYear() <= to) {
-                    list.add(data.getAllData().get(i));
+            if (nametitle == 1) {
+                for (int i = 0; i < data.getAllData().size(); i++) {
+                    if (data.getAllData().get(i).getTitle().toLowerCase().contains(name_title.toLowerCase()) && data.getAllData().get(i).getYear() >= from && data.getAllData().get(i).getYear() <= to) {
+                        list.add(data.getAllData().get(i));
+                    }
+                }
+                String[] temp = name_title.split(" ");
+                if(temp.length>1) {
+                    for (String s : temp) {
+                        for (int i = 0; i < data.getAllData().size(); i++) {
+                            if (data.getAllData().get(i).getTitle().toLowerCase().contains(s.toLowerCase()) && !list.contains(data.getAllData().get(i)) && data.getAllData().get(i).getYear() >= from && data.getAllData().get(i).getYear() <= to) {
+                                list.add(data.getAllData().get(i));
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -94,7 +114,7 @@ public class query1Handler  {
             temp[i][6]=list.get(i).getJournal_booktitle();
             temp[i][7]=list.get(i).getUrl();
         }
-        String columnNames[] = {"S.NO.", "title","author" ,"year", "volume","pages","journal/booktitle","url" };
+        String columnNames[] = {"S.NO.", "Title","Author" ,"Year", "Volume","Pages","Journal/Booktitle","URL" };
         resultPanel.updateData(temp,columnNames);
         resultPanel.updateTable();
     }
