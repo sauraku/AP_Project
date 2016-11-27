@@ -4,6 +4,14 @@
 public class entityResolver
 {
 
+    public static void main(String[] args){
+        String one="prashant sharma";
+        String two ="p m s.";
+        entityResolver var=new entityResolver();
+        int val=var.entity_resolution_checker(one,two);
+        System.out.print(val);
+    }
+
 
     //will return 1 if both are equal
     public int entity_resolution_checker(String one,String two) {
@@ -30,7 +38,8 @@ public class entityResolver
             second_char__second_string = second_string[0].charAt(1);
 
 
-        } catch (NullPointerException e) {
+        }
+        catch (StringIndexOutOfBoundsException e){
 
         }
         // checking if equal
@@ -72,10 +81,15 @@ public class entityResolver
         if ((first_char_first_string == first_char__second_string) && (second_char_first_string == '.' | second_char__second_string == '.')) {
             //checking if the initials are equal and the last name initial are equal and dont have any middle name
             if (len1 == 2 && len2 == 2) {
-                first_char_first_sting_last_name = first_string[1].charAt(0);
-                first_char_second_sting_last_name = second_string[1].charAt(0);
-                second_char_first_sting_last_name = first_string[1].charAt(1);
-                second_char_second_sting_last_name = second_string[1].charAt(1);
+                try {
+                    first_char_first_sting_last_name = first_string[1].charAt(0);
+                    first_char_second_sting_last_name = second_string[1].charAt(0);
+                    second_char_first_sting_last_name = first_string[1].charAt(1);
+                    second_char_second_sting_last_name = second_string[1].charAt(1);
+                }
+                catch (StringIndexOutOfBoundsException e){
+
+                }
                 if (first_string[1].equals(second_string[1])) {
                     return 1;
                 } else if ((first_char_first_sting_last_name == first_char_second_sting_last_name) && (second_char_first_sting_last_name == '.' | second_char_second_sting_last_name == '.')) {
@@ -83,14 +97,19 @@ public class entityResolver
                 }
             }
             if (len1 == 3 && len2 == 3) {
-                first_char_first_sting_last_name = first_string[2].charAt(0);
-                first_char_second_sting_last_name = second_string[2].charAt(0);
-                second_char_first_sting_last_name = first_string[2].charAt(1);
-                second_char_second_sting_last_name = second_string[2].charAt(1);
-                first_char_first_string_middle_name = first_string[1].charAt(0);
-                first_char_second_string_middle_name = second_string[1].charAt(0);
-                second_char_first_string_middle_name = first_string[1].charAt(1);
-                second_char_second_string_middle_name = second_string[1].charAt(1);
+                try{
+                    first_char_first_sting_last_name = first_string[2].charAt(0);
+                    first_char_second_sting_last_name = second_string[2].charAt(0);
+                    second_char_first_sting_last_name = first_string[2].charAt(1);
+                    second_char_second_sting_last_name = second_string[2].charAt(1);
+                    first_char_first_string_middle_name = first_string[1].charAt(0);
+                    first_char_second_string_middle_name = second_string[1].charAt(0);
+                    second_char_first_string_middle_name = first_string[1].charAt(1);
+                    second_char_second_string_middle_name = second_string[1].charAt(1);
+                }
+                catch (StringIndexOutOfBoundsException e){
+
+                }
                 if (second_string[2].equals(first_string[2])) {
                     if ((first_char_first_string_middle_name == first_char_second_string_middle_name) && (second_char_first_string_middle_name == '.' | second_char_second_string_middle_name == '.')) {
                         return 1;
@@ -116,16 +135,26 @@ public class entityResolver
         //missing middle name
         if (len1 > 2 | len2 > 2) {
             if (len1 > len2) {
-                first_char_first_sting_last_name = first_string[2].charAt(0);
-                first_char_second_sting_last_name = second_string[1].charAt(0);
-                second_char_first_sting_last_name = first_string[2].charAt(1);
-                second_char_second_sting_last_name = second_string[1].charAt(1);
+                try {
+                    first_char_first_sting_last_name = first_string[2].charAt(0);
+                    first_char_second_sting_last_name = second_string[1].charAt(0);
+                    second_char_first_sting_last_name = first_string[2].charAt(1);
+                    second_char_second_sting_last_name = second_string[1].charAt(1);
+                }
+                catch (StringIndexOutOfBoundsException e){
+
+                }
 
             } else {
-                first_char_first_sting_last_name = first_string[1].charAt(0);
-                first_char_second_sting_last_name = second_string[2].charAt(0);
-                second_char_first_sting_last_name = first_string[1].charAt(1);
-                second_char_second_sting_last_name = second_string[2].charAt(1);
+                try{
+                    first_char_first_sting_last_name = first_string[1].charAt(0);
+                    first_char_second_sting_last_name = second_string[2].charAt(0);
+                    second_char_first_sting_last_name = first_string[1].charAt(1);
+                    second_char_second_sting_last_name = second_string[2].charAt(1);
+                }
+                catch (StringIndexOutOfBoundsException e){
+
+                }
             }
             if (first_string[len1 - 1].equals(second_string[len2 - 1])) {
                 return 1;
@@ -154,14 +183,19 @@ public class entityResolver
                                 char second_char_first_string_middle_name, char second_char_second_string_middle_name) {
         if (first_string[0].equals(second_string[0])) {
             if (len1 == 3 && len2 == 3) {
-                first_char_first_sting_last_name = first_string[2].charAt(0);
-                first_char_second_sting_last_name = second_string[2].charAt(0);
-                second_char_first_sting_last_name = first_string[2].charAt(1);
-                second_char_second_sting_last_name = second_string[2].charAt(1);
-                first_char_first_string_middle_name = first_string[1].charAt(0);
-                first_char_second_string_middle_name = second_string[1].charAt(0);
-                second_char_first_string_middle_name = first_string[1].charAt(1);
-                second_char_second_string_middle_name = second_string[1].charAt(1);
+                try {
+                    first_char_first_sting_last_name = first_string[2].charAt(0);
+                    first_char_second_sting_last_name = second_string[2].charAt(0);
+                    second_char_first_sting_last_name = first_string[2].charAt(1);
+                    second_char_second_sting_last_name = second_string[2].charAt(1);
+                    first_char_first_string_middle_name = first_string[1].charAt(0);
+                    first_char_second_string_middle_name = second_string[1].charAt(0);
+                    second_char_first_string_middle_name = first_string[1].charAt(1);
+                    second_char_second_string_middle_name = second_string[1].charAt(1);
+                }
+                catch (StringIndexOutOfBoundsException e){
+
+                }
                 if (second_string[2].equals(first_string[2])) {
                     if ((first_char_first_string_middle_name == first_char_second_string_middle_name) && (second_char_first_string_middle_name == '.' | second_char_second_string_middle_name == '.')) {
                         return 1;
@@ -175,16 +209,26 @@ public class entityResolver
                 }
             } else if (len1 > 2 | len2 > 2) {
                 if (len1 > len2) {
-                    first_char_first_sting_last_name = first_string[2].charAt(0);
-                    first_char_second_sting_last_name = second_string[1].charAt(0);
-                    second_char_first_sting_last_name = first_string[2].charAt(1);
-                    second_char_second_sting_last_name = second_string[1].charAt(1);
+                    try {
+                        first_char_first_sting_last_name = first_string[2].charAt(0);
+                        first_char_second_sting_last_name = second_string[1].charAt(0);
+                        second_char_first_sting_last_name = first_string[2].charAt(1);
+                        second_char_second_sting_last_name = second_string[1].charAt(1);
+                    }
+                    catch (StringIndexOutOfBoundsException e){
+
+                    }
 
                 } else {
-                    first_char_first_sting_last_name = first_string[1].charAt(0);
-                    first_char_second_sting_last_name = second_string[2].charAt(0);
-                    second_char_first_sting_last_name = first_string[1].charAt(1);
-                    second_char_second_sting_last_name = second_string[2].charAt(1);
+                    try {
+                        first_char_first_sting_last_name = first_string[1].charAt(0);
+                        first_char_second_sting_last_name = second_string[2].charAt(0);
+                        second_char_first_sting_last_name = first_string[1].charAt(1);
+                        second_char_second_sting_last_name = second_string[2].charAt(1);
+                    }
+                    catch (StringIndexOutOfBoundsException e){
+
+                    }
                 }
                 if (first_string[len1 - 1].equals(second_string[len2 - 1])) {
                     return 1;
@@ -192,10 +236,15 @@ public class entityResolver
                     return 1;
                 }
             } else if (len1 == 2 && len2 == 2) {
-                first_char_first_sting_last_name = first_string[1].charAt(0);
-                first_char_second_sting_last_name = second_string[1].charAt(0);
-                second_char_first_sting_last_name = first_string[1].charAt(1);
-                second_char_second_sting_last_name = second_string[1].charAt(1);
+                try {
+                    first_char_first_sting_last_name = first_string[1].charAt(0);
+                    first_char_second_sting_last_name = second_string[1].charAt(0);
+                    second_char_first_sting_last_name = first_string[1].charAt(1);
+                    second_char_second_sting_last_name = second_string[1].charAt(1);
+                }
+                catch (StringIndexOutOfBoundsException e){
+
+                }
                 if ((first_char_first_sting_last_name == first_char_second_sting_last_name) && (second_char_first_sting_last_name == '.' | second_char_second_sting_last_name == '.')) {
                     return 1;
                 }
