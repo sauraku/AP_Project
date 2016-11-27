@@ -7,14 +7,16 @@ import java.util.Collections;
  */
 
 //sortby 0== year 1==relevence
+//name=0        title=1
 public class query1Handler  {
 
-    private int sortby,from,to;
+    private int sortby,nametitle,from,to;
     private String name_title;
     private ArrayList<publishables> list= new ArrayList<>();
 
-    public query1Handler(String _name_title, int _sortby, int _from, int _to)
+    public query1Handler(String _name_title, int _sortby,int _nametitle, int _from, int _to)
     {
+        nametitle=_nametitle;
         sortby=_sortby;
         from=_from;
         to=_to;
@@ -23,11 +25,20 @@ public class query1Handler  {
     // sort==1 for year and ===2 for relevance
     public void doWork()
     {
-        for(int i = 0; i< data.getAllData().size(); i++)
+        //System.out.println("nametitle="+nametitle);
+        if(nametitle==0) {
+            for (int i = 0; i < data.getAllData().size(); i++) {
+                if (data.getAllData().get(i).getAuthor().equalsIgnoreCase(name_title) && data.getAllData().get(i).getYear() >= from && data.getAllData().get(i).getYear() <= to) {
+                    list.add(data.getAllData().get(i));
+                }
+            }
+        }
+        else if(nametitle==1)
         {
-            if(data.getAllData().get(i).getAuthor().equals(name_title)&& data.getAllData().get(i).getYear()>=from && data.getAllData().get(i).getYear()<=to)
-            {
-                list.add(data.getAllData().get(i));
+            for (int i = 0; i < data.getAllData().size(); i++) {
+                if (data.getAllData().get(i).getTitle().equalsIgnoreCase(name_title) && data.getAllData().get(i).getYear() >= from && data.getAllData().get(i).getYear() <= to) {
+                    list.add(data.getAllData().get(i));
+                }
             }
         }
         sort();

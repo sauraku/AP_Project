@@ -7,4 +7,4 @@ public class mainClass {
     }
 }
 
-
+//artist shows only.. gotta fix it

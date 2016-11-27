@@ -13,54 +13,18 @@ public class myFrame extends JFrame
 {
     private Point point=null;
     private JFrame frame;
-    private JPanel mainPanel,topPanel=new JPanel(new FlowLayout(FlowLayout.RIGHT));
+    private JPanel mainPanel;
     private JLabel heading;
-    private JButton close=new JButton("X"),maximize=new JButton("^"),minimize=new JButton("-");
+
 
 
     public myFrame(myPanel panel)
     {
         mainPanel=panel.getPanel();
-        prepareTopPanel();
         prepareFrame();
         addDraggable();
-        makeButtonWork();
-    }
-    private void makeButtonWork()
-    {
-        close.addActionListener(e -> {
-            System.exit(0);
-        });
-        minimize.addActionListener(e -> {
-            frame.setState(JFrame.ICONIFIED);
-        });
-        maximize.addActionListener(e -> {
-            if(getExtendedState()==NORMAL)
-                setExtendedState(MAXIMIZED_BOTH);
-            else
-                setExtendedState(NORMAL);
-        });
     }
 
-    public void prepareTopPanel()
-    {
-        topPanel.setOpaque(false);
-        close.setFont(new Font("Serif", Font.BOLD, 30));
-        close.setBackground(Color.GRAY);
-        close.setForeground(Color.cyan);
-        minimize.setFont(new Font("Serif", Font.BOLD, 30));
-        minimize.setBackground(Color.GRAY);
-        minimize.setForeground(Color.cyan);
-        maximize.setFont(new Font("Serif", Font.BOLD, 30));
-        maximize.setBackground(Color.GRAY);
-        maximize.setForeground(Color.cyan);
-        minimize.setFocusPainted(false);
-        maximize.setFocusPainted(false);
-        close.setFocusPainted(false);
-        topPanel.add(minimize);
-        topPanel.add(maximize);
-        topPanel.add(close);
-    }
 
     private void prepareFrame()
     {
@@ -78,8 +42,6 @@ public class myFrame extends JFrame
         framegbc.gridheight=1;
         framegbc.gridx=0;
         framegbc.gridy=0;
-        frame.add(topPanel,framegbc);
-        framegbc.gridy=1;
         frame.add(heading,framegbc);
 
         frame.addWindowListener(new WindowAdapter() {
@@ -91,7 +53,7 @@ public class myFrame extends JFrame
         framegbc.gridwidth=1;
         framegbc.gridheight=6;
         //framegbc.gridx=0;
-        framegbc.gridy=2;
+        framegbc.gridy=1;
         framegbc.anchor= GridBagConstraints.WEST;
         frame.add(mainPanel,framegbc);
 
@@ -107,8 +69,7 @@ public class myFrame extends JFrame
         frame.add(pane,framegbc);
 
         frame.getContentPane().setBackground(Color.GRAY);
-        frame.setSize(1800,1080);
-        frame.setUndecorated(true);
+        frame.setSize(1800,1500);
         frame.setMinimumSize(new Dimension(1600,1000));
         frame.setVisible(true);
     }
