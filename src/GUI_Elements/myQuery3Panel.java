@@ -6,7 +6,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 /**
  * Created by skwow on 10/27/2016.
@@ -16,9 +15,9 @@ public class myQuery3Panel
     private JButton resetButton,searchButton;
     private JPanel panel4 =new JPanel(new GridBagLayout());
     private GridBagConstraints panel4gbc = new GridBagConstraints();
-    private JTextField ThrasholdField = new JTextField();
+    private JTextField ThresholdField1 = new JTextField(),ThresholdField2 = new JTextField(),ThresholdField3 = new JTextField(),ThresholdField4 = new JTextField(),ThresholdField5 = new JTextField();
     private JLabel ThrasholdText = new JLabel("Threshold");
-    private JTextField nameField= new JTextField();
+    private JTextField nameField1= new JTextField(),nameField2= new JTextField(),nameField3= new JTextField(),nameField4= new JTextField(),nameField5= new JTextField();
     private JLabel nameText= new JLabel("Author Name");
 
     public myQuery3Panel()
@@ -43,35 +42,73 @@ public class myQuery3Panel
         panel4.setBackground(Color.gray);
     }
 
+    private void setFont()
+    {
+        ThrasholdText.setFont(new Font("Serif", Font.BOLD, 30));
+        ThresholdField1.setFont(new Font("Serif", Font.BOLD, 30));
+        ThresholdField2.setFont(new Font("Serif", Font.BOLD, 30));
+        ThresholdField3.setFont(new Font("Serif", Font.BOLD, 30));
+        ThresholdField4.setFont(new Font("Serif", Font.BOLD, 30));
+        ThresholdField5.setFont(new Font("Serif", Font.BOLD, 30));
+        nameText.setFont(new Font("Serif", Font.BOLD, 30));
+        nameField1.setFont(new Font("Serif", Font.BOLD, 30));
+        nameField2.setFont(new Font("Serif", Font.BOLD, 30));
+        nameField3.setFont(new Font("Serif", Font.BOLD, 30));
+        nameField4.setFont(new Font("Serif", Font.BOLD, 30));
+        nameField5.setFont(new Font("Serif", Font.BOLD, 30));
+    }
+
 
     public void prepareGui()
     {
-        //ThrasholdField.setPreferredSize(new Dimension(200,50));
-        //ThrasholdText.setPreferredSize(new Dimension(200,50));
-        ThrasholdText.setFont(new Font("Serif", Font.BOLD, 30));
-        ThrasholdField.setFont(new Font("Serif", Font.BOLD, 30));
-        //nameField.setPreferredSize(new Dimension(200,50));
-        //nameText.setPreferredSize(new Dimension(200,50));
-        nameText.setFont(new Font("Serif", Font.BOLD, 30));
-        nameField.setFont(new Font("Serif", Font.BOLD, 30));
+        setFont();
         panel4gbc.gridx=0;
         panel4gbc.gridy=0;
         panel4.add(ThrasholdText, panel4gbc);
-        panel4gbc.gridx=0;
-        panel4gbc.gridy=1;
-        panel4.add(ThrasholdField, panel4gbc);
-        panel4gbc.gridx=0;
-        panel4gbc.gridy=2;
+        panel4gbc.gridx=1;
+        panel4gbc.gridy=0;
         panel4.add(nameText, panel4gbc);
         panel4gbc.gridx=0;
+        panel4gbc.gridy=1;
+        panel4.add(ThresholdField1, panel4gbc);
+        panel4gbc.gridx=0;
+        panel4gbc.gridy=2;
+        panel4.add(ThresholdField2, panel4gbc);
+        panel4gbc.gridx=0;
         panel4gbc.gridy=3;
-        panel4.add(nameField, panel4gbc);
-        JLabel l1=new JLabel("      ");
-        JLabel l2=new JLabel("      ");
+        panel4.add(ThresholdField3, panel4gbc);
+        panel4gbc.gridx=0;
         panel4gbc.gridy=4;
-        panel4.add(l1, panel4gbc);
+        panel4.add(ThresholdField4, panel4gbc);
+        panel4gbc.gridx=0;
         panel4gbc.gridy=5;
-        panel4.add(l2, panel4gbc);
+        panel4.add(ThresholdField5, panel4gbc);
+        panel4gbc.gridx=1;
+        panel4gbc.gridy=1;
+        panel4.add(nameField1, panel4gbc);
+        panel4gbc.gridx=1;
+        panel4gbc.gridy=2;
+        panel4.add(nameField2, panel4gbc);
+        panel4gbc.gridx=1;
+        panel4gbc.gridy=3;
+        panel4.add(nameField3, panel4gbc);
+        panel4gbc.gridx=1;
+        panel4gbc.gridy=4;
+        panel4.add(nameField4, panel4gbc);
+        panel4gbc.gridx=1;
+        panel4gbc.gridy=5;
+        panel4.add(nameField5, panel4gbc);
+        panel4gbc.gridx=0;
+        panel4gbc.gridy=6;
+        setButtons();
+        panel4.add(searchButton, panel4gbc);
+        panel4gbc.gridx=1;
+        panel4gbc.gridy=6;
+        panel4.add(resetButton, panel4gbc);
+    }
+
+    private void setButtons()
+    {
         resetButton=new JButton("Reset");
         resetButton.setBackground(Color.gray);
         resetButton.setFont(new Font("Serif", Font.BOLD, 30));
@@ -80,12 +117,6 @@ public class myQuery3Panel
         searchButton.setBackground(Color.gray);
         searchButton.setFont(new Font("Serif", Font.BOLD, 30));
         //searchButton.setPreferredSize(new Dimension(200,50));
-        panel4gbc.gridx=0;
-        panel4gbc.gridy=6;
-        panel4.add(searchButton, panel4gbc);
-        panel4gbc.gridx=1;
-        panel4gbc.gridy=6;
-        panel4.add(resetButton, panel4gbc);
     }
 
     public void buttonWorking()
@@ -93,17 +124,25 @@ public class myQuery3Panel
         resetButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ThrasholdField.setText("");
+                ThresholdField1.setText("");
             }
         });
 
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String[] authorTemp=new String[1];
-                int[] yearTemp=new int[1];
-                authorTemp[0]=nameField.getText();
-                yearTemp[0]= Integer.parseInt(ThrasholdField.getText());
+                String[] authorTemp=new String[5];
+                int[] yearTemp=new int[5];
+                authorTemp[0]=nameField1.getText();
+                authorTemp[1]=nameField2.getText();
+                authorTemp[2]=nameField3.getText();
+                authorTemp[3]=nameField4.getText();
+                authorTemp[4]=nameField5.getText();
+                yearTemp[0]= Integer.parseInt(ThresholdField1.getText());
+                yearTemp[1]= Integer.parseInt(ThresholdField2.getText());
+                yearTemp[2]= Integer.parseInt(ThresholdField3.getText());
+                yearTemp[3]= Integer.parseInt(ThresholdField4.getText());
+                yearTemp[4]= Integer.parseInt(ThresholdField5.getText());
                 query3Handler q= new query3Handler(authorTemp,yearTemp);
             }
         });
@@ -114,3 +153,9 @@ public class myQuery3Panel
         return panel4;
     }
 }
+
+
+
+//Chi-Wang Shu
+//Antonio Fern
+//Lutz Bornmann

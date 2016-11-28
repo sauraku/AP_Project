@@ -5,6 +5,7 @@ import Data.publishables;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
+import utilities.entityResolver;
 
 import java.util.ArrayList;
 
@@ -13,6 +14,7 @@ import java.util.ArrayList;
  */
 public class query3Handler
 {
+    private entityResolver er= new entityResolver();
     private String[] authors_name;
     private int[] year;
     private ArrayList<ArrayList<publishables>> list= new ArrayList<>();
@@ -20,8 +22,25 @@ public class query3Handler
     private ArrayList<Integer> predicted_values=new ArrayList<>();
 
     public query3Handler(String[] authors , int[] years){
+        for(int i=0;i<5;i++)
+        {
+            ArrayList<publishables> temp = new ArrayList<>();
+            ArrayList<Integer> tempi = new ArrayList<>();
+            list.add(temp);
+            values.add(tempi);
+        }
         year=years;
         authors_name=authors;
+        combiner();
+        print();
+    }
+
+    private void print() {
+        for(int i: predicted_values)
+        {
+            System.out.print(i+"  ");
+        }
+        System.out.println();
     }
 
     public int checking_order_increasing(ArrayList<Integer> arr) {
@@ -51,7 +70,7 @@ public class query3Handler
     public void extracting(String name_title,int to,int k){
         for(int i = 0; i< data.getAllData().size(); i++)
         {
-            if(data.getAllData().get(i).getAuthor().equals(name_title)&& data.getAllData().get(i).getYear()<=to)
+            if(er.entity_resolution_checker(data.getAllData().get(i).getAuthor().toLowerCase(),name_title.toLowerCase())==1&& data.getAllData().get(i).getYear()<=to)
             {
                 list.get(k).add(data.getAllData().get(i));
                 if (values.get(k).size()>(to- data.getAllData().get(i).getYear())){
