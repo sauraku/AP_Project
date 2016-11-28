@@ -162,6 +162,10 @@ public class myPanel
                         query1Handler q1 = new query1Handler(name_title, sortBy.charAt(8)-'0',0, from, to);
                         q1.doWork();
                     }
+                    else if (q1p.sort.getSelectedCheckbox().toString().charAt(26) == '1') {
+                        query1Handler q1 = new query1Handler(name_title, sortBy.charAt(8)-'0',0, from, to);
+                        q1.doWork();
+                    }
                 }else if (searchBy.charAt(0) == 'T') {
                     if (q1p.sort.getSelectedCheckbox().toString().charAt(26) == '0') {
                         query1Handler q1 = new query1Handler(name_title, sortBy.charAt(8)-'0',1, from, to);

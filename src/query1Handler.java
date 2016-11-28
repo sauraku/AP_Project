@@ -13,6 +13,7 @@ public class query1Handler  {
     private int sortby,nametitle,from,to;
     private String name_title;
     private ArrayList<publishables> list= new ArrayList<>();
+    private entityResolver er= new entityResolver();
 
     public query1Handler(String _name_title, int _sortby,int _nametitle, int _from, int _to)
     {
@@ -29,7 +30,7 @@ public class query1Handler  {
         if(sortby==0) {
             if (nametitle == 0) {
                 for (int i = 0; i < data.getAllData().size(); i++) {
-                    if (data.getAllData().get(i).getAuthor().equalsIgnoreCase(name_title) && data.getAllData().get(i).getYear() >= from && data.getAllData().get(i).getYear() <= to) {
+                    if (er.entity_resolution_checker(data.getAllData().get(i).getAuthor().toLowerCase(),name_title.toLowerCase()) && data.getAllData().get(i).getYear() >= from && data.getAllData().get(i).getYear() <= to) {
                         list.add(data.getAllData().get(i));
                     }
                 }
@@ -40,6 +41,7 @@ public class query1Handler  {
                     }
                 }
             }
+            sort();
         }
         else if(sortby==1)
         {
@@ -60,8 +62,25 @@ public class query1Handler  {
                     }
                 }
             }
+            else if (nametitle == 0) {
+                for (int i = 0; i < data.getAllData().size(); i++) {
+                    if (data.getAllData().get(i).getAuthor().toLowerCase().contains(name_title.toLowerCase()) && data.getAllData().get(i).getYear() >= from && data.getAllData().get(i).getYear() <= to) {
+                        list.add(data.getAllData().get(i));
+                    }
+                }
+                String[] temp = name_title.split(" ");
+                if(temp.length>1) {
+                    for (String s : temp) {
+                        for (int i = 0; i < data.getAllData().size(); i++) {
+                            if (data.getAllData().get(i).getTitle().toLowerCase().contains(s.toLowerCase()) && !list.contains(data.getAllData().get(i)) && data.getAllData().get(i).getYear() >= from && data.getAllData().get(i).getYear() <= to) {
+                                list.add(data.getAllData().get(i));
+                            }
+                        }
+                    }
+                }
+            }
         }
-        sort();
+
         //print();
         showResult();
     }
