@@ -6,10 +6,10 @@
 	DBLP: Copyright 1993-2016 by Schloss Dagstuhl - Leibniz Center for Informatics (German: Schloss Dagstuhl - Leibniz-Zentrum für Informatik GmbH)
 	and Michael Ley (Universität Trier, Informatik, ley@uni-trier.de) and 
 
-	The data provided by DBLP on its webpages as well as the XML files available at http://dblp.uni-trier.de/xml/
+	The Data.data provided by DBLP on its webpages as well as the XML files available at http://dblp.uni-trier.de/xml/
 	are released under the Open Data Commons Attribution License (ODC-BY 1.0). You are free to copy, distribute, use, modify,
-	transform, build upon and produce derived works from our data as long as you attribute any public use of the data, or works
-	produced from the data, in the manner specified in the license. Read the full ODC-BY 1.0 license text for the exact terms
+	transform, build upon and produce derived works from our Data.data as long as you attribute any public use of the Data.data, or works
+	produced from the Data.data, in the manner specified in the license. Read the full ODC-BY 1.0 license text for the exact terms
 	that apply. The ODC-BY 1.0 license is courtesy of the Open Knowledge Foundation.  
 
 	http://opendatacommons.org/licenses/by/1.0/
