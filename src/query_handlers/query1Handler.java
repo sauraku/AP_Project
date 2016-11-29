@@ -16,7 +16,7 @@ import java.util.Collections;
 
 //sortby 0== year 1==relevence
 //name=0        title=1
-public class query1Handler  {
+public class query1Handler extends queryHandlers  {
 
     private int sortby,nametitle,from,to;
     private String name_title;
@@ -100,7 +100,7 @@ public class query1Handler  {
         }
 
         //print();
-        showResult();
+        //showResult();
     }
 
     public void sort()

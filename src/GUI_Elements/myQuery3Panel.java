@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by skwow on 10/27/2016.
  */
-public class myQuery3Panel
+public class myQuery3Panel extends queryPanels
 {
     private JButton resetButton,searchButton;
     private JPanel panel4 =new JPanel(new GridBagLayout());
@@ -26,12 +26,10 @@ public class myQuery3Panel
         panel4gbc.weighty=1;
         panel4gbc.fill = GridBagConstraints.BOTH;
         panel4gbc.insets= new Insets(10,10,10,10);
-        prepareGui();
-        colorize();
-        buttonWorking();
+        this.prepare();
     }
 
-    private void colorize()
+    public void colorize()
     {
         ThrasholdText.setForeground(Color.cyan);
         ThrasholdText.setBackground(Color.gray);
@@ -98,16 +96,10 @@ public class myQuery3Panel
         panel4gbc.gridx=1;
         panel4gbc.gridy=5;
         panel4.add(nameField5, panel4gbc);
-        panel4gbc.gridx=0;
-        panel4gbc.gridy=6;
-        setButtons();
-        panel4.add(searchButton, panel4gbc);
-        panel4gbc.gridx=1;
-        panel4gbc.gridy=6;
-        panel4.add(resetButton, panel4gbc);
+
     }
 
-    private void setButtons()
+    public void prepareButtons()
     {
         resetButton=new JButton("Reset");
         resetButton.setBackground(Color.gray);
@@ -117,9 +109,16 @@ public class myQuery3Panel
         searchButton.setBackground(Color.gray);
         searchButton.setFont(new Font("Serif", Font.BOLD, 30));
         //searchButton.setPreferredSize(new Dimension(200,50));
+        panel4gbc.gridx=0;
+        panel4gbc.gridy=6;
+        //setButtons();
+        panel4.add(searchButton, panel4gbc);
+        panel4gbc.gridx=1;
+        panel4gbc.gridy=6;
+        panel4.add(resetButton, panel4gbc);
     }
 
-    public void buttonWorking()
+    public void workingOfButtons()
     {
         resetButton.addActionListener(new ActionListener() {
             @Override

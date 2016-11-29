@@ -2,14 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2a40aeb-bc8b-42a3-b748-9da23519009d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/GUI_Elements/myQuery3Panel$1.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/GUI_Elements/myQuery3Panel$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/GUI_Elements/myQuery3Panel$2.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/GUI_Elements/myQuery3Panel$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/GUI_Elements/myQuery3Panel.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/GUI_Elements/myQuery3Panel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/utilities/entityResolver.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/utilities/entityResolver.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI_Elements/queryPanels.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/query_handlers/queryHandlers.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/GUI_Elements/loadingScreen.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/GUI_Elements/loadingScreen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/GUI_Elements/myPanel.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/GUI_Elements/myPanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/GUI_Elements/myQuery1Panel$1.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/GUI_Elements/myQuery1Panel$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/GUI_Elements/myQuery1Panel.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/GUI_Elements/myQuery1Panel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/GUI_Elements/myQuery2Panel$1.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/GUI_Elements/myQuery2Panel$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/GUI_Elements/myQuery2Panel$2.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/GUI_Elements/myQuery2Panel$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/GUI_Elements/myQuery2Panel.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/GUI_Elements/myQuery2Panel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/main_Class/mainClass.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/main_Class/mainClass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/query_handlers/query1Handler.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/query_handlers/query1Handler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/query_handlers/query2Handler.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/query_handlers/query2Handler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AP_Project/utilities/parser.class" afterPath="$PROJECT_DIR$/out/production/AP_Project/utilities/parser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI_Elements/loadingScreen.java" afterPath="$PROJECT_DIR$/src/GUI_Elements/loadingScreen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI_Elements/myPanel.java" afterPath="$PROJECT_DIR$/src/GUI_Elements/myPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI_Elements/myQuery1Panel.java" afterPath="$PROJECT_DIR$/src/GUI_Elements/myQuery1Panel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI_Elements/myQuery2Panel.java" afterPath="$PROJECT_DIR$/src/GUI_Elements/myQuery2Panel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI_Elements/myQuery3Panel.java" afterPath="$PROJECT_DIR$/src/GUI_Elements/myQuery3Panel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/query_handlers/query3Handler.java" afterPath="$PROJECT_DIR$/src/query_handlers/query3Handler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utilities/entityResolver.java" afterPath="$PROJECT_DIR$/src/utilities/entityResolver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main_Class/mainClass.java" afterPath="$PROJECT_DIR$/src/main_Class/mainClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/query_handlers/query1Handler.java" afterPath="$PROJECT_DIR$/src/query_handlers/query1Handler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/query_handlers/query2Handler.java" afterPath="$PROJECT_DIR$/src/query_handlers/query2Handler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utilities/parser.java" afterPath="$PROJECT_DIR$/src/utilities/parser.java" />
     </list>
     <ignored path="AP_Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,51 +45,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="myPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI_Elements/myPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11">
-              <caret line="169" column="32" selection-start-line="169" selection-start-column="32" selection-end-line="169" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="myQuery1Panel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI_Elements/myQuery1Panel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3125">
-              <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+            <state relative-caret-position="175">
+              <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myQuery2Panel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI_Elements/myQuery2Panel.java">
+      <file leaf-file-name="myPanel.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GUI_Elements/myPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="91" column="40" selection-start-line="91" selection-start-column="40" selection-end-line="91" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="query1Handler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/query_handlers/query1Handler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="38" column="128" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="128" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mainClass.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main_Class/mainClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+            <state relative-caret-position="0">
+              <caret line="0" column="17" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,21 +67,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="query3Handler.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/query_handlers/query3Handler.java">
+      <file leaf-file-name="myQuery2Panel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI_Elements/myQuery2Panel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+            <state relative-caret-position="300">
+              <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="entityResolver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utilities/entityResolver.java">
+      <file leaf-file-name="queryPanels.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI_Elements/queryPanels.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1546">
-              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+            <state relative-caret-position="0">
+              <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -105,18 +90,53 @@
       <file leaf-file-name="myQuery3Panel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI_Elements/myQuery3Panel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="159" column="14" selection-start-line="159" selection-start-column="2" selection-end-line="159" selection-end-column="14" />
+            <state relative-caret-position="2800">
+              <caret line="117" column="43" selection-start-line="117" selection-start-column="43" selection-end-line="117" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="resultPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI_Elements/resultPanel.java">
+      <file leaf-file-name="mainClass.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main_Class/mainClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="250">
+              <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="queryHandlers.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/query_handlers/queryHandlers.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="18" column="5" selection-start-line="9" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="query2Handler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/query_handlers/query2Handler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-225">
+              <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+              <folding>
+                <element signature="e#371#372#0" expanded="true" />
+                <element signature="e#395#396#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loadingScreen.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI_Elements/loadingScreen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -125,8 +145,8 @@
       <file leaf-file-name="parser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utilities/parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+            <state relative-caret-position="297">
+              <caret line="95" column="37" selection-start-line="95" selection-start-column="37" selection-end-line="95" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -190,17 +210,20 @@
         <option value="$PROJECT_DIR$/src/query_Handlers/query3Handler.java" />
         <option value="$PROJECT_DIR$/src/query2Handler.java" />
         <option value="$PROJECT_DIR$/src/Data/publishables.java" />
-        <option value="$PROJECT_DIR$/src/GUI_Elements/myQuery2Panel.java" />
-        <option value="$PROJECT_DIR$/src/query_handlers/query2Handler.java" />
         <option value="$PROJECT_DIR$/src/GUI_Elements/myFrame.java" />
-        <option value="$PROJECT_DIR$/src/query_handlers/query1Handler.java" />
-        <option value="$PROJECT_DIR$/src/GUI_Elements/myQuery1Panel.java" />
-        <option value="$PROJECT_DIR$/src/GUI_Elements/myPanel.java" />
-        <option value="$PROJECT_DIR$/src/main_Class/mainClass.java" />
-        <option value="$PROJECT_DIR$/src/utilities/parser.java" />
         <option value="$PROJECT_DIR$/src/utilities/entityResolver.java" />
-        <option value="$PROJECT_DIR$/src/GUI_Elements/myQuery3Panel.java" />
         <option value="$PROJECT_DIR$/src/query_handlers/query3Handler.java" />
+        <option value="$PROJECT_DIR$/src/main_Class/mainClass.java" />
+        <option value="$PROJECT_DIR$/src/query_handlers/query1Handler.java" />
+        <option value="$PROJECT_DIR$/src/query_handlers/query2Handler.java" />
+        <option value="$PROJECT_DIR$/src/query_handlers/queryHandlers.java" />
+        <option value="$PROJECT_DIR$/src/utilities/parser.java" />
+        <option value="$PROJECT_DIR$/src/GUI_Elements/loadingScreen.java" />
+        <option value="$PROJECT_DIR$/src/GUI_Elements/myQuery1Panel.java" />
+        <option value="$PROJECT_DIR$/src/GUI_Elements/myQuery2Panel.java" />
+        <option value="$PROJECT_DIR$/src/GUI_Elements/queryPanels.java" />
+        <option value="$PROJECT_DIR$/src/GUI_Elements/myQuery3Panel.java" />
+        <option value="$PROJECT_DIR$/src/GUI_Elements/myPanel.java" />
       </list>
     </option>
   </component>
@@ -235,6 +258,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -343,7 +367,6 @@
       </pane>
       <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -717,18 +740,17 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3607306" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2956621" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2859375" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -739,6 +761,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -787,29 +810,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Data/publishables.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/comments.java" />
-    <entry file="file://$PROJECT_DIR$/src/main_Class/mainClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/query_handlers/query1Handler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/comments.java" />
     <entry file="file://$PROJECT_DIR$/src/main_Class/mainClass.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -899,7 +899,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -907,20 +906,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utilities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utilities.java" />
     <entry file="file://$PROJECT_DIR$/src/Data/publishables.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-128">
@@ -933,15 +922,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI_Elements/myFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="87" column="13" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -949,15 +929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="184" column="9" selection-start-line="8" selection-start-column="8" selection-end-line="184" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI_Elements/loadingScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -965,23 +936,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-714">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2100">
+          <caret line="84" column="5" selection-start-line="5" selection-start-column="3" selection-end-line="84" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utilities/entityResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/query_handlers/query2Handler.java">
+    <entry file="file://$USER_HOME$/Dropbox/AP_assignments/assignment5/src/MediaSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-664">
-          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI_Elements/myQuery2Panel.java">
+    <entry file="file://$USER_HOME$/Dropbox/AP_assignments/assignment5/src/MediaManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="91" column="40" selection-start-line="91" selection-start-column="40" selection-end-line="91" selection-end-column="40" />
-          <folding />
+        <state relative-caret-position="-3225">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -993,77 +976,118 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI_Elements/myPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI_Elements/myFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11">
-          <caret line="169" column="32" selection-start-line="169" selection-start-column="32" selection-end-line="169" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main_Class/mainClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+        <state relative-caret-position="2050">
+          <caret line="87" column="13" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1225#1226#0" expanded="false" />
+            <element signature="e#1271#1272#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/entity.java">
+    <entry file="file://$PROJECT_DIR$/src/query_handlers/query3Handler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2100">
-          <caret line="84" column="5" selection-start-line="5" selection-start-column="3" selection-end-line="84" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utilities/parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI_Elements/myQuery1Panel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3125">
-          <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+        <state relative-caret-position="1875">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/query_handlers/query1Handler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="38" column="128" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="128" />
+        <state relative-caret-position="2375">
+          <caret line="102" column="10" selection-start-line="102" selection-start-column="10" selection-end-line="102" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utilities/entityResolver.java">
+    <entry file="file://$PROJECT_DIR$/src/query_handlers/query2Handler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1546">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        <state relative-caret-position="-225">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+          <folding>
+            <element signature="e#371#372#0" expanded="true" />
+            <element signature="e#395#396#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main_Class/mainClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utilities/parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="95" column="37" selection-start-line="95" selection-start-column="37" selection-end-line="95" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI_Elements/loadingScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/query_handlers/queryHandlers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="18" column="5" selection-start-line="9" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI_Elements/myQuery1Panel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI_Elements/myQuery2Panel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI_Elements/queryPanels.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI_Elements/myQuery3Panel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="159" column="14" selection-start-line="159" selection-start-column="2" selection-end-line="159" selection-end-column="14" />
+        <state relative-caret-position="2800">
+          <caret line="117" column="43" selection-start-line="117" selection-start-column="43" selection-end-line="117" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/query_handlers/query3Handler.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI_Elements/myPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="17" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

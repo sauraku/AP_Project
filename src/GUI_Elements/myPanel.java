@@ -1,3 +1,4 @@
+//factory pattern
 package GUI_Elements;
 
 import query_handlers.query1Handler;
@@ -17,20 +18,26 @@ public class myPanel
 {
     private JPanel panel=new JPanel(new GridBagLayout()),panel2,panel3,panel4;
     private  myQuery1Panel q1p;
+    myQuery2Panel p3;
+    myQuery3Panel p4;
     private GridBagConstraints gbc= new GridBagConstraints();
     private JComboBox queryCombo;
 
+    public void UIElementFactory()
+    {
+        q1p=new myQuery1Panel();
+        panel2= q1p.panel2;
+        p3=new myQuery2Panel();
+        p4=new myQuery3Panel();
+        panel3=p3.getPanel();
+        panel4=p4.getPanel();
+    }
 
     public myPanel()
     {
+        UIElementFactory();
         panel.setOpaque(false);
         gbc.insets= new Insets(20,20,20,20);
-        q1p=new myQuery1Panel();
-        panel2= q1p.panel2;
-        myQuery2Panel p3=new myQuery2Panel();
-        myQuery3Panel p4=new myQuery3Panel();
-        panel3=p3.getPanel();
-        panel4=p4.getPanel();
         final DefaultComboBoxModel typeOfQuery = new DefaultComboBoxModel();
         typeOfQuery.addElement("Query");
         typeOfQuery.addElement("Query1");
@@ -169,10 +176,10 @@ public class myPanel
     {
         if (searchType == 'N') {
                 query1Handler q1 = new query1Handler(_nameTitle, sortByType,0, _from, to);
-                q1.doWork();
+                q1.perform();
         }else if (searchType == 'T') {
                 query1Handler q1 = new query1Handler(_nameTitle, sortByType,1, _from, to);
-                q1.doWork();
+                q1.perform();
         }
     }
 

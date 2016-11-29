@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by skwow on 10/27/2016.
  */
-public class myQuery2Panel
+public class myQuery2Panel extends queryPanels
 {
     private JButton resetButton,searchButton;
     private JPanel panel3=new JPanel(new GridBagLayout());
@@ -25,12 +25,10 @@ public class myQuery2Panel
         panel3gbc.weighty=1;
         panel3gbc.fill = GridBagConstraints.BOTH;
         panel3gbc.insets= new Insets(10,10,10,10);
-        prepareGui();
-        colorize();
-        buttonWorking();
+        this.prepare();
     }
 
-    private void colorize()
+    public void colorize()
     {
         text.setForeground(Color.cyan);
         text.setBackground(Color.gray);
@@ -58,6 +56,11 @@ public class myQuery2Panel
         panel3.add(l1,panel3gbc);
         panel3gbc.gridy=3;
         panel3.add(l2,panel3gbc);
+
+    }
+
+    public void prepareButtons()
+    {
         resetButton=new JButton("Reset");
         resetButton.setBackground(Color.gray);
         resetButton.setFont(new Font("Serif", Font.BOLD, 30));
@@ -74,7 +77,7 @@ public class myQuery2Panel
         panel3.add(resetButton,panel3gbc);
     }
 
-    public void buttonWorking()
+    public void workingOfButtons()
     {
         resetButton.addActionListener(new ActionListener() {
             @Override
@@ -92,6 +95,7 @@ public class myQuery2Panel
                         throw new myOwnExeption("threshold can't be negetive!");
                     }
                     query2Handler q2 = new query2Handler(k);
+                    q2.perform();
                 } catch (myOwnExeption myOwnExeption) { }
             }
         });

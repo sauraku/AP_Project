@@ -9,7 +9,7 @@ import java.util.HashMap;
 /**
  * Created by skwow on 10/27/2016.
  */
-public class query2Handler
+public class query2Handler extends queryHandlers
 {
     private int limit;
     private HashMap<String,Integer> map = new HashMap<>();
@@ -18,7 +18,6 @@ public class query2Handler
     public query2Handler(int _k)
     {
         limit=_k;
-        doWork();
     }
 
     public void doWork()
@@ -45,7 +44,7 @@ public class query2Handler
                 c++;
             }
         }
-        showResult();
+        //showResult();
     }
 
     void showResult()

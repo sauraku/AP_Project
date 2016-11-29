@@ -8,7 +8,7 @@ import java.awt.event.ItemListener;
 /**
  * Created by skwow on 10/23/2016.
  */
-public class myQuery1Panel {
+public class myQuery1Panel extends queryPanels {
     protected JPanel panel2=new JPanel(new GridBagLayout());
     private GridBagConstraints panel2gbc= new GridBagConstraints();
     private JLabel sinceYear,from,to;
@@ -23,20 +23,25 @@ public class myQuery1Panel {
         panel2gbc.weighty=1;
         panel2gbc.fill = GridBagConstraints.BOTH;
         panel2gbc.insets= new Insets(10,10,10,10);
-        prepareSearchByComboBox();
-        prepareYearSearchComboBox();
-        prepareCheckBoxUI();
-        prepareButtons();
-        colorize();
+        this.prepare();
+        //prepareButtons();
+        //colorize();
     }
 
-    private void colorize() {
+    public void colorize() {
         panel2.setOpaque(false);
         sinceYear.setForeground(Color.cyan);
         from.setForeground(Color.cyan);
         to.setForeground(Color.cyan);
         resetButton.setBackground(Color.cyan);
         searchButton.setBackground(Color.cyan);
+    }
+
+    @Override
+    void prepareGui() {
+        prepareSearchByComboBox();
+        prepareYearSearchComboBox();
+        prepareCheckBoxUI();
     }
 
     public void prepareButtons()
@@ -54,6 +59,9 @@ public class myQuery1Panel {
         panel2gbc.gridy=9;
         panel2.add(resetButton,panel2gbc);
     }
+
+    @Override
+    void workingOfButtons() {}
 
     private void prepareCheckBoxUI()
     {

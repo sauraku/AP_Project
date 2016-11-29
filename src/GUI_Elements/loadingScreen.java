@@ -1,3 +1,5 @@
+//decorator pattern
+
 package GUI_Elements;
 
 import javax.swing.*;
@@ -5,15 +7,23 @@ import javax.swing.*;
 /**
  * Created by skwow on 11/28/2016.
  */
-public class loadingScreen
+public class loadingScreen extends JFrame
 {
     private JProgressBar bar;
     private JFrame loading;
+    private int p;
 
 
-    public loadingScreen(int p)
+    public loadingScreen(JFrame frame,int _p)
     {
-        loading= new JFrame();
+        loading= frame;
+        p=_p;
+        prepareGui();
+
+    }
+
+    public void prepareGui()
+    {
         loading.setSize(600,40);
         bar = new JProgressBar(0, p);
         bar.setValue(0);

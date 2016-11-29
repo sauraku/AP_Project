@@ -1,3 +1,4 @@
+//singleton class
 package utilities;
 
 import Data.data;
@@ -7,6 +8,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import javax.swing.*;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
@@ -19,15 +21,24 @@ public class parser extends DefaultHandler
     private boolean authorbool = false,ignorebool=false,overall=false,articlebool, titlebool = false, yearbool = false, urlbool = false,volumebool=false,pagebool=false,journalbool=false;
     int c=0;
     private publishables pub;
+    private static parser instance = null;
 
 
     private loadingScreen ls;
 
 
-    public parser()
+    private parser() {}
+
+    public static parser getInstance() {
+        if(instance == null) {
+            instance = new parser();
+        }
+        return instance;
+    }
+
+    public void parse()
     {
-        System.setProperty("jdk.xml.entityExpansionLimit", "0");
-        ls= new loadingScreen(1523384);
+        ls= new loadingScreen(new JFrame(),1523384);
         try {
             File inputFile = new File("dblp.xml");
             SAXParserFactory factory = SAXParserFactory.newInstance();
@@ -35,7 +46,8 @@ public class parser extends DefaultHandler
             saxParser.parse(inputFile, this);
         } catch (Exception f) {
             f.printStackTrace();
-        }    }
+        }
+    }
 
 
     @Override
