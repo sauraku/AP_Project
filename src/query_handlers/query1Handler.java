@@ -31,7 +31,7 @@ public class query1Handler extends queryHandlers  {
         to=_to;
         name_title=_name_title;
     }
-
+    ///sort by year
     private void sortByYearWorks()
     {
         if (nametitle == 0) {
@@ -49,7 +49,7 @@ public class query1Handler extends queryHandlers  {
         }
         sort();
     }
-
+    ///sort by relevence
     private void sortByRelevenceWorks()
     {
         if (nametitle == 1) {
@@ -61,9 +61,11 @@ public class query1Handler extends queryHandlers  {
             String[] temp = name_title.split(" ");
             if(temp.length>1) {
                 for (String s : temp) {
-                    for (int i = 0; i < data.getAllData().size(); i++) {
-                        if (data.getAllData().get(i).getTitle().toLowerCase().contains(s.toLowerCase()) && !list.contains(data.getAllData().get(i)) && data.getAllData().get(i).getYear() >= from && data.getAllData().get(i).getYear() <= to) {
-                            list.add(data.getAllData().get(i));
+                    if(!s.toLowerCase().equals("of")&&!s.toLowerCase().equals("and")&&!s.toLowerCase().equals("in")) {
+                        for (int i = 0; i < data.getAllData().size(); i++) {
+                            if (data.getAllData().get(i).getTitle().toLowerCase().contains(s.toLowerCase()) && !list.contains(data.getAllData().get(i)) && data.getAllData().get(i).getYear() >= from && data.getAllData().get(i).getYear() <= to) {
+                                list.add(data.getAllData().get(i));
+                            }
                         }
                     }
                 }
@@ -76,10 +78,11 @@ public class query1Handler extends queryHandlers  {
                 }
             }
             String[] temp = name_title.split(" ");
+            System.out.println(temp);
             if(temp.length>1) {
                 for (String s : temp) {
                     for (int i = 0; i < data.getAllData().size(); i++) {
-                        if (data.getAllData().get(i).getTitle().toLowerCase().contains(s.toLowerCase()) && !list.contains(data.getAllData().get(i)) && data.getAllData().get(i).getYear() >= from && data.getAllData().get(i).getYear() <= to) {
+                        if (data.getAllData().get(i).getAuthor().toLowerCase().contains(s.toLowerCase()) && !list.contains(data.getAllData().get(i)) && data.getAllData().get(i).getYear() >= from && data.getAllData().get(i).getYear() <= to) {
                             list.add(data.getAllData().get(i));
                         }
                     }
@@ -117,13 +120,13 @@ public class query1Handler extends queryHandlers  {
     }
 
 
-    void print()
+    public void print()
     {
         System.out.println(list.size());
-        for(int i=0;i<list.size();i++)
+       /* for(int i=0;i<list.size();i++)
         {
             System.out.println(list.get(i));
-        }
+        }*/
 
     }
 

@@ -1,6 +1,7 @@
 package GUI_Elements;
 
 import query_handlers.query3Handler;
+import utilities.myOwnExeption;
 
 import javax.swing.*;
 import java.awt.*;
@@ -64,36 +65,36 @@ public class myQuery3Panel extends queryPanels
         panel4gbc.gridy=0;
         panel4.add(ThrasholdText, panel4gbc);
         panel4gbc.gridx=1;
-        panel4gbc.gridy=0;
+        //panel4gbc.gridy=0;
         panel4.add(nameText, panel4gbc);
         panel4gbc.gridx=0;
         panel4gbc.gridy=1;
         panel4.add(ThresholdField1, panel4gbc);
-        panel4gbc.gridx=0;
+        //panel4gbc.gridx=0;
         panel4gbc.gridy=2;
         panel4.add(ThresholdField2, panel4gbc);
-        panel4gbc.gridx=0;
+        //panel4gbc.gridx=0;
         panel4gbc.gridy=3;
         panel4.add(ThresholdField3, panel4gbc);
-        panel4gbc.gridx=0;
+        //panel4gbc.gridx=0;
         panel4gbc.gridy=4;
         panel4.add(ThresholdField4, panel4gbc);
-        panel4gbc.gridx=0;
+        //panel4gbc.gridx=0;
         panel4gbc.gridy=5;
         panel4.add(ThresholdField5, panel4gbc);
         panel4gbc.gridx=1;
         panel4gbc.gridy=1;
         panel4.add(nameField1, panel4gbc);
-        panel4gbc.gridx=1;
+        //panel4gbc.gridx=1;
         panel4gbc.gridy=2;
         panel4.add(nameField2, panel4gbc);
-        panel4gbc.gridx=1;
+        //panel4gbc.gridx=1;
         panel4gbc.gridy=3;
         panel4.add(nameField3, panel4gbc);
-        panel4gbc.gridx=1;
+        //panel4gbc.gridx=1;
         panel4gbc.gridy=4;
         panel4.add(nameField4, panel4gbc);
-        panel4gbc.gridx=1;
+        //panel4gbc.gridx=1;
         panel4gbc.gridy=5;
         panel4.add(nameField5, panel4gbc);
 
@@ -124,6 +125,15 @@ public class myQuery3Panel extends queryPanels
             @Override
             public void actionPerformed(ActionEvent e) {
                 ThresholdField1.setText("");
+                ThresholdField2.setText("");
+                ThresholdField3.setText("");
+                ThresholdField4.setText("");
+                ThresholdField5.setText("");
+                nameField1.setText("");
+                nameField2.setText("");
+                nameField3.setText("");
+                nameField4.setText("");
+                nameField5.setText("");
             }
         });
 
@@ -132,17 +142,24 @@ public class myQuery3Panel extends queryPanels
             public void actionPerformed(ActionEvent e) {
                 String[] authorTemp=new String[5];
                 int[] yearTemp=new int[5];
-                authorTemp[0]=nameField1.getText();
-                authorTemp[1]=nameField2.getText();
-                authorTemp[2]=nameField3.getText();
-                authorTemp[3]=nameField4.getText();
-                authorTemp[4]=nameField5.getText();
-                yearTemp[0]= Integer.parseInt(ThresholdField1.getText());
-                yearTemp[1]= Integer.parseInt(ThresholdField2.getText());
-                yearTemp[2]= Integer.parseInt(ThresholdField3.getText());
-                yearTemp[3]= Integer.parseInt(ThresholdField4.getText());
-                yearTemp[4]= Integer.parseInt(ThresholdField5.getText());
+                try {
+                    authorTemp[0] = nameField1.getText();
+                    authorTemp[1] = nameField2.getText();
+                    authorTemp[2] = nameField3.getText();
+                    authorTemp[3] = nameField4.getText();
+                    authorTemp[4] = nameField5.getText();
+                    yearTemp[0] = Integer.parseInt(ThresholdField1.getText());
+                    yearTemp[1] = Integer.parseInt(ThresholdField2.getText());
+                    yearTemp[2] = Integer.parseInt(ThresholdField3.getText());
+                    yearTemp[3] = Integer.parseInt(ThresholdField4.getText());
+                    yearTemp[4] = Integer.parseInt(ThresholdField5.getText());
+                }catch (Exception x)
+                {try {
+                        throw new myOwnExeption("please fill all the field properly");
+                    } catch (utilities.myOwnExeption myOwnExeption) {return;}
+                }
                 query3Handler q= new query3Handler(authorTemp,yearTemp);
+                q.perform();
             }
         });
     }
@@ -154,7 +171,3 @@ public class myQuery3Panel extends queryPanels
 }
 
 
-
-//Chi-Wang Shu
-//Antonio Fern
-//Lutz Bornmann

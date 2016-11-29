@@ -21,7 +21,7 @@ import java.io.File;
 public class parser extends DefaultHandler
 {
     private boolean authorbool = false,ignorebool=false,overall=false,articlebool, titlebool = false, yearbool = false, urlbool = false,volumebool=false,pagebool=false,journalbool=false;
-    int c=0;
+    private int c=0;
     private publishables pub;
     private static parser instance = null;
 

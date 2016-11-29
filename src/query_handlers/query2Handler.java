@@ -30,7 +30,7 @@ public class query2Handler extends queryHandlers
                 map.put(a,0);
             }
         }
-        System.out.println(map.size());
+        //System.out.println(map.size());
         for(int i = 0; i< data.getAllData().size(); i++)
         {
             for(String a : data.getAllData().get(i).getRawAuthor())

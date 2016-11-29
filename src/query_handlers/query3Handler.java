@@ -2,177 +2,106 @@ package query_handlers;
 
 import Data.data;
 import Data.publishables;
+import GUI_Elements.resultPanel;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 import utilities.entityResolver;
+import utilities.myOwnExeption;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by skwow on 10/27/2016.
  */
 public class query3Handler extends queryHandlers
 {
+    private String[] authors;
+    private int[] years;
+    private int[] actual= new int[5];
+    private int[] pridicted= new int[5];
+    private ArrayList<publishables> list= new ArrayList<>();
     private entityResolver er= new entityResolver();
-    private String[] authors_name;
-    private int[] year;
-    private ArrayList<ArrayList<publishables>> list= new ArrayList<>();
-    private ArrayList<ArrayList<Integer>> values=new ArrayList<>();
-    private ArrayList<Integer> predicted_values=new ArrayList<>();
 
     ///constructor
-    public query3Handler(String[] authors , int[] years){
+    public query3Handler (String[] _authors,int[] _years)
+    {
+        authors=_authors;
+        years=_years;
+    }
+
+    ///use last 10% of data to guess the number of publishables
+    public void doWork() {
+
         for(int i=0;i<5;i++)
         {
-            ArrayList<publishables> temp = new ArrayList<>();
-            ArrayList<Integer> tempi = new ArrayList<>();
-            list.add(temp);
-            values.add(tempi);
-        }
-        year=years;
-        authors_name=authors;
-        doWork();
-    }
-
-    private void print() {
-        for(int i: predicted_values)
-        {
-            System.out.print(i+"  ");
-        }
-        System.out.println();
-    }
-
-    public int checking_order_increasing(ArrayList<Integer> arr) {
-
-        //checking increasing order
-        int c = 0;
-        for (int i = 1; i < arr.size(); i++) {
-            if (arr.get(i) < arr.get(i - 1)) {
-                c++;
-            }
-        }
-        return c;
-    }
-
-    public int checking_order_decreasing(ArrayList<Integer> arr){
-
-        //checking decreasing order
-        int c2=0;
-        for (int i=1;i<arr.size();i++){
-            if (arr.get(i)>arr.get(i-1)){
-                c2++;
-            }
-        }
-        return c2;
-    }
-
-    public void extracting(String name_title,int to,int k){
-        for(int i = 0; i< data.getAllData().size(); i++)
-        {
-            if(er.entity_resolution_checker(data.getAllData().get(i).getAuthor().toLowerCase(),name_title.toLowerCase())==1&& data.getAllData().get(i).getYear()<=to)
-            {
-                list.get(k).add(data.getAllData().get(i));
-                if (values.get(k).size()>(to- data.getAllData().get(i).getYear())){
-                    values.get(k).set(to- data.getAllData().get(i).getYear(),values.get(k).get(values.get(k).get(to- data.getAllData().get(i).getYear())+1));
-                }
-                else {
-                    for (int j = 0; j<to- data.getAllData().get(i).getYear()-values.get(k).size()+1; j++){
-                        values.get(k).add(0);
+            int c=0;
+            for (publishables p: data.getAllData()) {
+                if (er.entity_resolution_checker(p.getAuthor().toLowerCase(), authors[i].toLowerCase()) == 1 )
+                {
+                    c++;
+                    if( p.getYear()<=years[i]) {
+                        list.add(p);
                     }
-                    values.get(k).set(to- data.getAllData().get(i).getYear(),1);
                 }
             }
-
-        }
-    }
-
-    public int min(ArrayList<Integer> arr){
-        int min=100000000;
-        try{
-            min=arr.get(0);
-        }
-        catch (IndexOutOfBoundsException e){
-        }
-        for (Integer v:arr){
-            if (v<min){
-                min=v;
-            }
-        }
-        return min;
-    }
-
-    public int max(ArrayList<Integer> arr){
-        int max=0;
-        try{
-            max=arr.get(0);
-        }
-        catch (IndexOutOfBoundsException e){
-        }
-        for (Integer v:arr){
-            if (v>max){
-                max=v;
-            }
-        }
-        return max;
-    }
-
-    public void combiner(){
-        for (int i=0;i<5;i++){
-            extracting(authors_name[i],year[i],i);
-            predicted_values.add(predictor(i));
+            sort();
+            int ten=(int)(0.1*list.size())+1;
+            float av= ten/(list.get(0).getYear()-list.get(ten).getYear()+1) +1;
+            float f= list.size()+ av*(2016-list.get(0).getYear());
+            System.out.println(c+" "+f);
+            actual[i]=c;
+            pridicted[i]= (int) f;
+            list.clear();
         }
 
     }
 
-    public int predictor(int k){
-        int increasing=checking_order_increasing(values.get(k));
-        int decreasing=checking_order_decreasing(values.get(k));
-        int min=min(values.get(k));
-        int max=max(values.get(k));
 
-        if (increasing==values.get(k).size()) {
-            int d=values.get(k).get(values.get(k).size()-1)-values.get(k).get(values.get(k).size()-2);
-            return max+d;
-        }
 
-        else if (decreasing==values.get(k).size()) {
-            int d = values.get(k).get(values.get(k).size() - 2) - values.get(k).get(values.get(k).size() - 1);
-            if (min - d < 0) {
-                return 0;
-            }
-            else {
-                return min-d;
-            }
 
-        }
+    // sort==1 for year and ===2 for relevance
 
-        else {
-            double pred=min*(decreasing/(increasing+decreasing))+max*(increasing/(increasing+decreasing));
-            int predict;
-            if (decreasing>increasing){
-                predict=(int) Math.floor(pred);
-                if (predict-1<=0){
-                    return predict;
-                }
-                else{
-                    return predict-1;
-                }
-            }
-            else{
-                predict=(int) Math.ceil(pred);
-                return predict+1;
-            }
-        }
+
+    public void sort()
+    {
+        Collections.sort(list);
     }
 
-    @Override
-    void doWork() {
-        combiner();
+
+
+
+    public void add(publishables x)
+    {
+        list.add(x);
     }
+
+
+    public void print()
+    {
+        System.out.println(list.size());
+       /* for(int i=0;i<list.size();i++)
+        {
+            System.out.println(list.get(i));
+        }*/
+
+    }
+
+
     ///sends result as 2d array to resultPanel
-    @Override
-    void showResult() {
-
+    public void showResult()
+    {
+        Object[][] temp= new Object[5][4];
+        for(int i=0;i<5;i++)
+        {
+            temp[i][0]=i+1;
+            temp[i][1]=authors[i];
+            temp[i][2]=actual[i];
+            temp[i][3]=pridicted[i];
+        }
+        String columnNames[] = {"S.NO.", "Author","Actual" ,"Predicted" };
+        resultPanel.updateData(temp,columnNames);
+        resultPanel.updateTable();
     }
 }

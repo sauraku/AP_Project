@@ -55,7 +55,7 @@ public class resultPanel
         {
             for(int j=0;j<rowData[0].length;j++)
             {
-                System.out.println(i+" "+j);
+                //System.out.println(i+" "+j);
                 rowDataTemp[i-track][j]=rowData[i][j];
             }
         }

@@ -20,8 +20,8 @@ public class myPanel
 {
     private JPanel panel=new JPanel(new GridBagLayout()),panel2,panel3,panel4;
     private  myQuery1Panel q1p;
-    myQuery2Panel p3;
-    myQuery3Panel p4;
+    private myQuery2Panel p3;
+    private myQuery3Panel p4;
     private GridBagConstraints gbc= new GridBagConstraints();
     private JComboBox queryCombo;
     /// factory pattern for all the gui panel needed by this panel
@@ -67,6 +67,7 @@ public class myPanel
         panel3.setVisible(false);
         panel4.setVisible(false);
     }
+
     ///switching of panel by selecting type of query
     public void workingOfQueryCombo()
     {
@@ -123,30 +124,22 @@ public class myPanel
                 String searchBy = String.valueOf(q1p.searchByCombo.getSelectedItem());
                 if(searchBy.charAt(0)=='S'){try {
                     throw new myOwnExeption("please select from searchBy dropdown");
-                } catch (myOwnExeption myOwnExeption) {
-                    return;
-                } }
+                } catch (myOwnExeption myOwnExeption) {return;} }
                 String name_title = q1p.nameTitleTextField.getText();
                 if(name_title.equals("")){try {
                     throw new myOwnExeption("please fill name/title field");
-                } catch (myOwnExeption myOwnExeption) {
-                    return;
-                } }
+                } catch (myOwnExeption myOwnExeption) {return;} }
                 String yearSelect = String.valueOf(q1p.yearCombo.getSelectedItem());
                 if(yearSelect.charAt(0)=='Y'){try {
                     throw new myOwnExeption("please select from yearSelect dropdown");
-                } catch (myOwnExeption myOwnExeption) {
-                    return;
-                } }
+                } catch (myOwnExeption myOwnExeption) {return;} }
                 String sortBy;
                 try {
                     sortBy = q1p.sort.getSelectedCheckbox().getName();
                 } catch (Exception e1){
                     try {
                         throw new myOwnExeption("please select one of the radio buttons");
-                    } catch (myOwnExeption myOwnExeption) {
-                        return;
-                    }
+                    } catch (myOwnExeption myOwnExeption) {return;}
                 }//System.out.println(searchBy+" "+name_title+" "+yearSelect+" "+sortBy);
                 int from, to;
                 if (yearSelect.charAt(0) == 'S') {
@@ -156,14 +149,12 @@ public class myPanel
                     from = Integer.parseInt(q1p.fromTextField.getText());
                     to = Integer.parseInt(q1p.toTextField.getText());
                 }
-                if(from >2016 || from <0 || to >2016 || to<0)
-                {
+                if(from >2016 || from <0 || to >2016 || to<0) {
                     try {
                         throw new myOwnExeption("year range is 0-2016 only!");
                     } catch (myOwnExeption myOwnExeption) {return;}
                 }
-                if(to<from)
-                {
+                if(to<from) {
                     try {
                         throw new myOwnExeption("\"To\" can't be less than \"From\"");
                     } catch (myOwnExeption myOwnExeption) {return;}
@@ -173,6 +164,9 @@ public class myPanel
             }
         });
     }
+
+
+
     ///clicking on search button will collect relevent data from panel and send it to this function
     private void dowork(char searchType,String _nameTitle,int sortByType,int _from,int to)
     {

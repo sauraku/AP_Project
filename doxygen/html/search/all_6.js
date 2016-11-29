@@ -4,8 +4,6 @@ var searchData=
   ['main_5fclass',['main_Class',['../namespacemain___class.html',1,'']]],
   ['mainclass',['mainClass',['../classmain___class_1_1main_class.html',1,'main_Class']]],
   ['mainclass_2ejava',['mainClass.java',['../main_class_8java.html',1,'']]],
-  ['max',['max',['../classquery__handlers_1_1query3_handler.html#a5181103ca3b1aa7d28d8309d23663ec0',1,'query_handlers::query3Handler']]],
-  ['min',['min',['../classquery__handlers_1_1query3_handler.html#affac3098097a9d83c927eaaf740f34be',1,'query_handlers::query3Handler']]],
   ['myframe',['myFrame',['../class_g_u_i___elements_1_1my_frame.html',1,'GUI_Elements']]],
   ['myframe',['myFrame',['../class_g_u_i___elements_1_1my_frame.html#aa440e02a2f616477910624372b55f2fb',1,'GUI_Elements::myFrame']]],
   ['myframe_2ejava',['myFrame.java',['../my_frame_8java.html',1,'']]],
