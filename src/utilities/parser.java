@@ -1,4 +1,4 @@
-//singleton class
+
 package utilities;
 
 import Data.data;
@@ -16,6 +16,8 @@ import java.io.File;
 /**
  * Created by skwow on 11/8/2016.
  */
+
+///this class perses the xml class
 public class parser extends DefaultHandler
 {
     private boolean authorbool = false,ignorebool=false,overall=false,articlebool, titlebool = false, yearbool = false, urlbool = false,volumebool=false,pagebool=false,journalbool=false;
@@ -26,7 +28,7 @@ public class parser extends DefaultHandler
 
     private loadingScreen ls;
 
-
+    ///singleton class
     private parser() {}
 
     public static parser getInstance() {

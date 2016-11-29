@@ -15,6 +15,7 @@ public class query2Handler extends queryHandlers
     private HashMap<String,Integer> map = new HashMap<>();
     private int c=0;
 
+    ///constructor
     public query2Handler(int _k)
     {
         limit=_k;
@@ -47,6 +48,7 @@ public class query2Handler extends queryHandlers
         //showResult();
     }
 
+    ///sends result as 2d array to resultPanel
     void showResult()
     {
         if(c==0)

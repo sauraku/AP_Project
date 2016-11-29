@@ -14,6 +14,8 @@ import java.awt.event.ItemListener;
 /**
  * Created by skwow on 10/21/2016.
  */
+
+///main panel inside myFrame
 public class myPanel
 {
     private JPanel panel=new JPanel(new GridBagLayout()),panel2,panel3,panel4;
@@ -22,7 +24,7 @@ public class myPanel
     myQuery3Panel p4;
     private GridBagConstraints gbc= new GridBagConstraints();
     private JComboBox queryCombo;
-
+    /// factory pattern for all the gui panel needed by this panel
     public void UIElementFactory()
     {
         q1p=new myQuery1Panel();
@@ -65,7 +67,7 @@ public class myPanel
         panel3.setVisible(false);
         panel4.setVisible(false);
     }
-
+    ///switching of panel by selecting type of query
     public void workingOfQueryCombo()
     {
         queryCombo.addItemListener(new ItemListener() {
@@ -171,7 +173,7 @@ public class myPanel
             }
         });
     }
-
+    ///clicking on search button will collect relevent data from panel and send it to this function
     private void dowork(char searchType,String _nameTitle,int sortByType,int _from,int to)
     {
         if (searchType == 'N') {

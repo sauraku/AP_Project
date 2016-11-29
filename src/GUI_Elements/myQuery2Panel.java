@@ -18,7 +18,7 @@ public class myQuery2Panel extends queryPanels
     private GridBagConstraints panel3gbc= new GridBagConstraints();
     private JTextField field= new JTextField();
     private JLabel text= new JLabel("Threshold");
-
+    ///constructor initiates the skeleton of interface
     public myQuery2Panel()
     {
         panel3gbc.weightx=1;

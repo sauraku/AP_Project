@@ -7,13 +7,18 @@ import javax.swing.*;
 /**
  * Created by skwow on 11/28/2016.
  */
+
+///loading screen that pops up while reading xml file.
 public class loadingScreen extends JFrame
 {
+
+
     private JProgressBar bar;
     private JFrame loading;
     private int p;
 
-
+    ///constructor makes gui by taking Jframe, dynamically
+    ///Example of decorator pattern.
     public loadingScreen(JFrame frame,int _p)
     {
         loading= frame;

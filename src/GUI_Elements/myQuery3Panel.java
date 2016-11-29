@@ -19,7 +19,7 @@ public class myQuery3Panel extends queryPanels
     private JLabel ThrasholdText = new JLabel("Threshold");
     private JTextField nameField1= new JTextField(),nameField2= new JTextField(),nameField3= new JTextField(),nameField4= new JTextField(),nameField5= new JTextField();
     private JLabel nameText= new JLabel("Author Name");
-
+    ///constructor initiates the skeleton of interface
     public myQuery3Panel()
     {
         panel4gbc.weightx=1;

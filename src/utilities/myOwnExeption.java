@@ -8,11 +8,15 @@ import java.awt.event.ActionListener;
 /**
  * Created by skwow on 11/21/2016.
  */
+
+///this is meant for exception handling by creating dialog box.
 public class myOwnExeption extends Exception
 {
     private String error;
     private JButton ok = new JButton("OK");
     private JFrame frame = new JFrame("ERROR");
+
+    ///constructors takes a string
     public myOwnExeption(String s)
     {
         error=s;
@@ -20,6 +24,7 @@ public class myOwnExeption extends Exception
         workingOfOK();
     }
 
+    ///this builds error message by displaying that string
     private void buildErrorScreen()
     {
 

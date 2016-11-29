@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by skwow on 10/27/2016.
  */
+///contains output box for result
 public class resultPanel
 {
     private JScrollPane pane;
@@ -45,7 +46,7 @@ public class resultPanel
         rowData=_data;
         if(rowData.length>20) {next.setEnabled(true);}
     }
-
+    ///responsible for ensuring only 20 lines goes at a time
     public static void updateTable()
     {
         //System.out.println("-------"+rowData.length);

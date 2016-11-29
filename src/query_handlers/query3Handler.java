@@ -12,7 +12,7 @@ import java.util.ArrayList;
 /**
  * Created by skwow on 10/27/2016.
  */
-public class query3Handler
+public class query3Handler extends queryHandlers
 {
     private entityResolver er= new entityResolver();
     private String[] authors_name;
@@ -21,6 +21,7 @@ public class query3Handler
     private ArrayList<ArrayList<Integer>> values=new ArrayList<>();
     private ArrayList<Integer> predicted_values=new ArrayList<>();
 
+    ///constructor
     public query3Handler(String[] authors , int[] years){
         for(int i=0;i<5;i++)
         {
@@ -31,8 +32,7 @@ public class query3Handler
         }
         year=years;
         authors_name=authors;
-        combiner();
-        print();
+        doWork();
     }
 
     private void print() {
@@ -164,5 +164,15 @@ public class query3Handler
                 return predict+1;
             }
         }
+    }
+
+    @Override
+    void doWork() {
+        combiner();
+    }
+    ///sends result as 2d array to resultPanel
+    @Override
+    void showResult() {
+
     }
 }

@@ -8,6 +8,8 @@ import java.awt.event.*;
 /**
  * Created by skwow on 10/23/2016.
  */
+
+///main GUI frame
 public class myFrame extends JFrame
 {
     private Point point=null;
@@ -66,7 +68,7 @@ public class myFrame extends JFrame
         frame.setVisible(true);
     }
 
-
+    ///one can drag it by clicking anywhere on the frame
     public void addDraggable()
     {
         frame.addMouseListener(new MouseListener() {

@@ -17,7 +17,7 @@ public class myQuery1Panel extends queryPanels {
     protected JComboBox yearCombo,searchByCombo;
     protected Checkbox chkSortByYear,chkSortByRelevance;
     protected CheckboxGroup sort;
-
+    ///constructor initiates the skeleton of interface
     public myQuery1Panel() {
         panel2gbc.weightx=1;
         panel2gbc.weighty=1;

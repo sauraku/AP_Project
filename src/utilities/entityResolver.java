@@ -3,9 +3,11 @@ package utilities;
 /**
  * Created by skwow on 11/10/2016.
  */
+
+///a tool class for entity resolution
 public class entityResolver
 {
-    // checkig if one of the string of the name is equal or not
+    /// checkig if one of the string of the name is equal or not
     public int checking_a_string_to_be_equal(String a,String b){
         if (a.equals(b)){
             return 1;
@@ -20,7 +22,7 @@ public class entityResolver
     }
 
 
-    // Conditions for those name whose lenght is not same
+    /// Conditions for those name whose lenght is not same
     public int variable_lenght(String[] one ,String[] two){
         int q=one.length;
         int w=two.length;
@@ -51,7 +53,7 @@ public class entityResolver
     }
 
 
-    // Combining all
+    /// Combining all
     public int entity_resolution_checker(String one,String two){
         String[] one_string=one.split(" ");
         String[] two_string=two.split(" ");

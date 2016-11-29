@@ -22,7 +22,7 @@ public class query1Handler extends queryHandlers  {
     private String name_title;
     private ArrayList<publishables> list= new ArrayList<>();
     private entityResolver er= new entityResolver();
-
+    ///constructor
     public query1Handler(String _name_title, int _sortby,int _nametitle, int _from, int _to)
     {
         nametitle=_nametitle;
@@ -128,7 +128,7 @@ public class query1Handler extends queryHandlers  {
     }
 
 
-
+    ///sends result as 2d array to resultPanel
     void showResult()
     {
         if(list.size()==0)
