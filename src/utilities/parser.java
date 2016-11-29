@@ -15,9 +15,11 @@ import java.io.File;
 
 /**
  * Created by skwow on 11/8/2016.
+ * saurabh kumar 2015088
+ * prashant 2015072
  */
 
-///this class perses the xml class
+///this class parses the xml class
 public class parser extends DefaultHandler
 {
     private boolean authorbool = false,ignorebool=false,overall=false,articlebool, titlebool = false, yearbool = false, urlbool = false,volumebool=false,pagebool=false,journalbool=false;

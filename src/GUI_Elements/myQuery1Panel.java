@@ -7,6 +7,8 @@ import java.awt.event.ItemListener;
 
 /**
  * Created by skwow on 10/23/2016.
+ * saurabh kumar 2015088
+ * prashant 2015072
  */
 public class myQuery1Panel extends queryPanels {
     protected JPanel panel2=new JPanel(new GridBagLayout());

@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 
 /**
  * Created by skwow on 10/27/2016.
+ * saurabh kumar 2015088
+ * prashant 2015072
  */
 ///contains output box for result
 public class resultPanel

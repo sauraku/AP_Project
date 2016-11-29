@@ -2,6 +2,8 @@ package utilities;
 
 /**
  * Created by skwow on 11/10/2016.
+ * saurabh kumar 2015088
+ * prashant 2015072
  */
 
 ///a tool class for entity resolution

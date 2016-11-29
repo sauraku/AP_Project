@@ -8,6 +8,8 @@ import java.util.HashMap;
 
 /**
  * Created by skwow on 10/27/2016.
+ * saurabh kumar 2015088
+ * prashant 2015072
  */
 public class query2Handler extends queryHandlers
 {
